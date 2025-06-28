@@ -26,8 +26,7 @@ export default function RootLayout({
             <div className="body">
               {children}
             </div>
-
-            </div>
+          </div>
         </AppProvider>        
       </body>
     </html>
