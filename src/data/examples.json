@@ -124,7 +124,7 @@
     "title": "Multiple Return Values",
     "slug": "multiple-return-values",
     "description": "Python supports multiple return values via tuples.",
-    "code": "def vals():\n    return 3, 7\n\na, b = vals()\nprint(a)\nprint(b)\n\n_, c = vals()\nprint(\"Only second:\", c)",
+    "code": "# Functions can return multiple values using tuples\ndef vals():\n    return 3, 7\n\n# Unpack the returned tuple\na, b = vals()\nprint(a)\nprint(b)\n\n# Use underscore to ignore values you don't need\n_, c = vals()\nprint(\"Only second:\", c)",
     "explanation": "Python's tuple unpacking makes it easy to return and handle multiple values.",
     "output": "3\n7\nOnly second: 7",
     "order": 13
@@ -298,5 +298,15 @@
     "explanation": "Coroutines enable asynchronous programming. Use async def to define coroutines and await to call them.",
     "output": "Async example setup complete",
     "order": 30
+  },
+  {
+    "id": 31,
+    "title": "Custom Errors",
+    "slug": "custom-errors",
+    "description": "Python supports custom error types by extending Exception.",
+    "code": "# Define a custom error type by extending Exception\nclass argError(Exception):\n    def __init__(self, arg, prob):\n        self.arg = arg\n        self.prob = prob\n    \n    def __str__(self):\n        return f\"{self.arg} - {self.prob}\"\n\n# Function that might return a custom error\ndef f(arg):\n    if arg == 42:\n        # Return both a value and error (Go-style)\n        return -1, argError(arg, \"can't work with it\")\n    # Normal return\n    return arg + 3, None\n\n# Use the function\nresult, err = f(42)\nif err:\n    print(f\"Error: {err}\")\nelse:\n    print(f\"Result: {result}\")\n\n# Normal case\nresult, err = f(7)\nif err:\n    print(f\"Error: {err}\")\nelse:\n    print(f\"Result: {result}\")",
+    "explanation": "Custom errors let you create domain-specific error types. This example shows a Go-style error handling pattern with tuple returns.",
+    "output": "Error: 42 - can't work with it\nResult: 10",
+    "order": 31
   }
 ]

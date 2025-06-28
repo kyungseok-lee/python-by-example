@@ -416,6 +416,125 @@ a:visited {
   color: white;
 }
 
+/* Go by Example 스타일 레이아웃 */
+.example-content {
+  max-width: 100%;
+}
+
+.example-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #333;
+}
+
+.example-description {
+  margin: 0;
+  color: #999;
+  flex: 1;
+  padding-right: 20px;
+}
+
+.example-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.example-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.example-row {
+  display: flex;
+  border-bottom: 1px solid #2a2a2a;
+  min-height: 40px;
+}
+
+.explanation-cell {
+  width: 45%;
+  padding: 15px 20px 15px 0;
+  vertical-align: top;
+  color: #999;
+  font-size: 14px;
+  line-height: 1.6;
+  border-right: 1px solid #333;
+}
+
+.explanation-cell p {
+  margin: 0;
+}
+
+.code-cell {
+  width: 55%;
+  padding: 15px 0 15px 20px;
+  vertical-align: top;
+}
+
+.code-cell pre {
+  margin: 0;
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-family: 'JetBrains Mono', 'Fira Code', Consolas, 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #f8f8f2;
+}
+
+.code-cell code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+.output-cell {
+  width: 55%;
+  padding: 15px 0 15px 20px;
+  vertical-align: top;
+  background-color: #1a1a1a;
+}
+
+.output-content {
+  margin: 0;
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-family: 'JetBrains Mono', 'Fira Code', Consolas, 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #999;
+}
+
+/* 좁은 화면에서의 반응형 처리 */
+@media (max-width: 768px) {
+  .example-row {
+    flex-direction: column;
+  }
+  
+  .explanation-cell,
+  .code-cell,
+  .output-cell {
+    width: 100%;
+    border-right: none;
+    padding: 10px 0;
+  }
+  
+  .explanation-cell {
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+  }
+  
+  .code-cell,
+  .output-cell {
+    padding-top: 10px;
+  }
+}
+
 
 .navigation {
   display: flex;

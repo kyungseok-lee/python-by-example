@@ -2,8 +2,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { getExampleBySlug, getNavigationForExample } from "@/lib/data";
-import CodeBlock from "@/components/CodeBlock";
+import ExampleContent from "@/components/ExampleContent";
 import PageTitle from "@/components/PageTitle";
+import { parseCodeSections, getFullCode } from "@/lib/codeParser";
 
 interface ExamplePageProps {
   params: {
@@ -37,19 +38,25 @@ export default function ExamplePage({ params }: ExamplePageProps) {
 
   const navigation = getNavigationForExample(params.slug);
 
+  // 코드를 섹션으로 파싱
+  const codeSections = parseCodeSections(example.code, example.explanation);
+  const fullCode = getFullCode(codeSections);
+
   return (
     <div className="example-container">
       <PageTitle title={`Python by Example: ${example.title}`} />
-
-      <CodeBlock code={example.code} output={example.output} />
-
-      <div className="explanation">
-        <p>{example.explanation}</p>
-      </div>
+      
+      <ExampleContent
+        title={example.title}
+        description={example.description}
+        codeSections={codeSections}
+        output={example.output}
+        fullCode={fullCode}
+      />
 
       <div className="example-nav">
         <Link href="/" className="example-nav-index">
-          Index
+          index
         </Link>
 
         <div className="example-nav-examples">
