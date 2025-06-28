@@ -100,7 +100,7 @@ $ npm install
 # Start the development server
 $ npm run dev
 ```
-- Default URL: http://localhost:5000
+- Default URL: http://localhost:3000
 
 ---
 
