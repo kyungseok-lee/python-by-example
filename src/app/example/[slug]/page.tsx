@@ -31,25 +31,22 @@ export default function ExamplePage({ params }: ExamplePageProps) {
       </div>
 
       <div className="example-nav">
-        {navigation.prev ? (
-          <Link href={`/example/${navigation.prev.slug}`} className="example-nav-prev">
-            {navigation.prev.title}
-          </Link>
-        ) : (
-          <div className="example-nav-prev-placeholder"></div>
-        )}
-        
         <Link href="/" className="example-nav-index">
           index
         </Link>
         
-        {navigation.next ? (
-          <Link href={`/example/${navigation.next.slug}`} className="example-nav-next">
-            {navigation.next.title}
-          </Link>
-        ) : (
-          <div className="example-nav-next-placeholder"></div>
-        )}
+        <div className="example-nav-examples">
+          {navigation.prev && (
+            <Link href={`/example/${navigation.prev.slug}`} className="example-nav-prev">
+              {navigation.prev.title}
+            </Link>
+          )}
+          {navigation.next && (
+            <Link href={`/example/${navigation.next.slug}`} className="example-nav-next">
+              {navigation.next.title}
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   )

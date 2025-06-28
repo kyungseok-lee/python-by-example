@@ -288,8 +288,6 @@ a:visited {
   font-size: 14px;
 }
 
-.example-nav-prev,
-.example-nav-next,
 .example-nav-index {
   color: #999;
   text-decoration: underline;
@@ -297,15 +295,26 @@ a:visited {
   transition: color 0.2s ease;
 }
 
-.example-nav-prev:hover,
-.example-nav-next:hover,
 .example-nav-index:hover {
   color: #ccc;
 }
 
-.example-nav-prev-placeholder,
-.example-nav-next-placeholder {
-  width: 120px;
+.example-nav-examples {
+  display: flex;
+  gap: 20px;
+}
+
+.example-nav-prev,
+.example-nav-next {
+  color: #999;
+  text-decoration: underline;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.example-nav-prev:hover,
+.example-nav-next:hover {
+  color: #ccc;
 }
 
 .keyword {
