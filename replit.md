@@ -109,6 +109,7 @@ Changelog:
 - June 28, 2025. Initial setup
 - June 28, 2025. Added PostgreSQL database integration with Drizzle ORM
 - June 28, 2025. Converted to client-only static site with comprehensive Python tutorials
+- June 28, 2025. Cleaned up all server dependencies and files (server/, shared/, drizzle.config.ts)
 ```
 
 ## User Preferences
