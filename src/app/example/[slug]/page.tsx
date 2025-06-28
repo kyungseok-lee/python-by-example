@@ -1,45 +1,47 @@
-import Link from 'next/link'
-import { notFound } from 'next/navigation'
-import { Metadata } from 'next'
-import { getExampleBySlug, getNavigationForExample } from '@/lib/data'
-import CodeBlock from '@/components/CodeBlock'
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { Metadata } from "next";
+import { getExampleBySlug, getNavigationForExample } from "@/lib/data";
+import CodeBlock from "@/components/CodeBlock";
+import TitleSetter from "@/components/TitleSetter";
 
 interface ExamplePageProps {
   params: {
-    slug: string
-  }
+    slug: string;
+  };
 }
 
-export async function generateMetadata({ params }: ExamplePageProps): Promise<Metadata> {
-  const example = getExampleBySlug(params.slug)
-  
+export async function generateMetadata({
+  params,
+}: ExamplePageProps): Promise<Metadata> {
+  const example = getExampleBySlug(params.slug);
+
   if (!example) {
     return {
-      title: 'Python by Example'
-    }
+      title: "Python by Example",
+    };
   }
 
   return {
     title: `Python by Example: ${example.title}`,
-    description: example.explanation
-  }
+    description: example.explanation,
+  };
 }
 
 export default function ExamplePage({ params }: ExamplePageProps) {
-  const example = getExampleBySlug(params.slug)
-  
+  const example = getExampleBySlug(params.slug);
+
   if (!example) {
-    notFound()
+    notFound();
   }
 
-  const navigation = getNavigationForExample(params.slug)
+  const navigation = getNavigationForExample(params.slug);
 
   return (
     <div className="example-container">
-      <CodeBlock
-        code={example.code}
-        output={example.output}
-      />
+      <TitleSetter title={`Python by Example: ${example.title}`} />
+      
+      <CodeBlock code={example.code} output={example.output} />
 
       <div className="explanation">
         <p>{example.explanation}</p>
@@ -49,20 +51,26 @@ export default function ExamplePage({ params }: ExamplePageProps) {
         <Link href="/" className="example-nav-index">
           index
         </Link>
-        
+
         <div className="example-nav-examples">
           {navigation.prev && (
-            <Link href={`/example/${navigation.prev.slug}`} className="example-nav-prev">
+            <Link
+              href={`/example/${navigation.prev.slug}`}
+              className="example-nav-prev"
+            >
               {navigation.prev.title}
             </Link>
           )}
           {navigation.next && (
-            <Link href={`/example/${navigation.next.slug}`} className="example-nav-next">
+            <Link
+              href={`/example/${navigation.next.slug}`}
+              className="example-nav-next"
+            >
               {navigation.next.title}
             </Link>
           )}
         </div>
       </div>
     </div>
-  )
+  );
 }

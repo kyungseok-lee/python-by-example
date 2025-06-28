@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from 'next'
 import './globals.css'
 import DynamicHeader from '@/components/DynamicHeader'
+import { TitleProvider } from '@/contexts/TitleContext'
 
 export const metadata: Metadata = {
   title: 'Python by Example',
@@ -19,18 +20,20 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <div className="main-container">
-          <DynamicHeader />
-          <div className="body">
-            {children}
-          </div>
-          <div className="footer">
-              <p>
-                <Link href="https://gobyexample.com/">Go by Example</Link>에서 영감을
-                받아 제작되었습니다.
-              </p>
+        <TitleProvider>
+          <div className="main-container">
+            <DynamicHeader />
+            <div className="body">
+              {children}
             </div>
-          </div>        
+            <div className="footer">
+                <p>
+                  <Link href="https://gobyexample.com/">Go by Example</Link>에서 영감을
+                  받아 제작되었습니다.
+                </p>
+              </div>
+            </div>
+        </TitleProvider>        
       </body>
     </html>
   )
