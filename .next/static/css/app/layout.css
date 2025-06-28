@@ -52,19 +52,19 @@ em {
 }
 
 h2 {
-  font-size: 32px;
-  line-height: 40px;
+  font-size: 48px;
+  line-height: 56px;
   margin-top: 40px;
 }
 
 h2 a {
-  text-decoration: none;
+  text-decoration: underline;
   color: #e4e4e4;
 }
 
 a, a:visited {
   color: #e4e4e4;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 /* 메인 컨테이너 - Go by Example의 intro div 스타일 */
