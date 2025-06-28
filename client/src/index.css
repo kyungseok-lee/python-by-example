@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  --code-bg: hsl(210, 20%, 98%);
+  --code-border: hsl(213, 13%, 93%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+  --code-bg: hsl(240, 3.7%, 15.9%);
+  --code-border: hsl(240, 3.7%, 20%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* Custom styles for syntax highlighting */
+.syntax-python .keyword { 
+  color: hsl(348, 83%, 47%); 
+  font-weight: 600; 
+}
+
+.syntax-python .string { 
+  color: hsl(230, 100%, 28%); 
+}
+
+.syntax-python .comment { 
+  color: hsl(220, 9%, 55%); 
+  font-style: italic; 
+}
+
+.syntax-python .function { 
+  color: hsl(271, 81%, 56%); 
+}
+
+.syntax-python .number { 
+  color: hsl(221, 87%, 60%); 
+}
+
+.syntax-python .operator { 
+  color: hsl(348, 83%, 47%); 
+}
+
+.code-block { 
+  font-family: 'Fira Code', 'Monaco', 'Consolas', monospace; 
+  font-feature-settings: "liga" 1, "calt" 1;
+  line-height: 1.6;
+}
+
+.run-result {
+  background: hsl(0, 0%, 10%);
+  color: hsl(120, 100%, 75%);
+  font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  border: 2px solid hsl(220, 13%, 91%);
+  border-top: 2px solid hsl(207, 90%, 54%);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
