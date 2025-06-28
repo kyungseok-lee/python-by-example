@@ -4,7 +4,6 @@ export interface Example {
   id: number
   title: string
   slug: string
-  categoryId: number
   description: string
   code: string
   explanation: string
