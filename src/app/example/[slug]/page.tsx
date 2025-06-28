@@ -33,19 +33,19 @@ export default function ExamplePage({ params }: ExamplePageProps) {
       <div className="example-nav">
         {navigation.prev ? (
           <Link href={`/example/${navigation.prev.slug}`} className="example-nav-prev">
-            ← {navigation.prev.title}
+            {navigation.prev.title}
           </Link>
         ) : (
           <div className="example-nav-prev-placeholder"></div>
         )}
         
         <Link href="/" className="example-nav-index">
-          인덱스
+          index
         </Link>
         
         {navigation.next ? (
           <Link href={`/example/${navigation.next.slug}`} className="example-nav-next">
-            {navigation.next.title} →
+            {navigation.next.title}
           </Link>
         ) : (
           <div className="example-nav-next-placeholder"></div>
