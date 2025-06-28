@@ -65,25 +65,20 @@ a:hover {
 }
 
 .examples-list li {
-  margin: 0 0 4px 0;
+  margin: 0 0 1px 0;
 }
 
 .examples-list a {
   display: block;
-  padding: 8px 12px;
+  padding: 4px 8px;
   color: #60a5fa;
   font-size: 18px;
-  font-weight: 500;
-  border-radius: 4px;
-  transition: all 0.2s ease;
-  border: 1px solid transparent;
+  font-weight: 400;
+  text-decoration: none;
 }
 
 .examples-list a:hover {
-  background-color: #111827;
-  border-color: #374151;
-  text-decoration: none;
-  color: #93c5fd;
+  text-decoration: underline;
 }
 
 /* 예제 페이지 헤더 */
