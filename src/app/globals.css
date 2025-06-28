@@ -24,8 +24,7 @@ a:hover {
 .main-container {
   max-width: 600px;
   margin: 0;
-  margin-left: 60px;
-  padding: 60px 20px;
+  padding: 60px 60px 60px 60px;
 }
 
 /* 헤더 타이틀 (Go by Example 스타일) */
@@ -301,16 +300,14 @@ code {
 
 @media (max-width: 768px) {
   .main-container {
-    margin-left: 20px;
     max-width: none;
-    padding: 40px 15px;
+    padding: 40px 20px;
   }
 }
 
 @media (max-width: 480px) {
   .main-container {
-    margin-left: 15px;
-    padding: 30px 12px;
+    padding: 30px 15px;
   }
   
   .main-title {
