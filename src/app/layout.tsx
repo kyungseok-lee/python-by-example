@@ -28,8 +28,9 @@ export default function RootLayout({
             </div>
             <div className="footer">
                 <p>
-                  <Link href="https://gobyexample.com/">Go by Example</Link>에서 영감을
-                  받아 제작되었습니다.
+                  by Mark McGranaghan and Eli Bendersky | {' '}
+                  <Link href="https://github.com/mmcgrana/gobyexample">source</Link> | {' '}
+                  <Link href="https://creativecommons.org/licenses/by/3.0/">license</Link>
                 </p>
               </div>
             </div>

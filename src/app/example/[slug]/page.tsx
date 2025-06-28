@@ -40,7 +40,7 @@ export default function ExamplePage({ params }: ExamplePageProps) {
   return (
     <div className="example-container">
       <PageTitle title={`Python by Example: ${example.title}`} />
-      
+
       <CodeBlock code={example.code} output={example.output} />
 
       <div className="explanation">
@@ -49,7 +49,7 @@ export default function ExamplePage({ params }: ExamplePageProps) {
 
       <div className="example-nav">
         <Link href="/" className="example-nav-index">
-          index
+          Index
         </Link>
 
         <div className="example-nav-examples">

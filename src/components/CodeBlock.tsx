@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 interface CodeBlockProps {
   code: string
@@ -16,6 +16,23 @@ export default function CodeBlock({
   showCopy = true 
 }: CodeBlockProps) {
   const [copied, setCopied] = useState(false)
+  const codeRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const loadPrism = async () => {
+      if (typeof window !== 'undefined' && codeRef.current) {
+        try {
+          const Prism = (await import('prismjs')).default
+          // Python 언어 지원 로드
+          await import('prismjs/components/prism-python.js')
+          Prism.highlightElement(codeRef.current)
+        } catch (error) {
+          console.log('Prism.js 로딩 실패, 기본 텍스트로 표시')
+        }
+      }
+    }
+    loadPrism()
+  }, [code])
 
   const handleCopy = async () => {
     try {
@@ -25,6 +42,13 @@ export default function CodeBlock({
     } catch (err) {
       console.error('복사 실패:', err)
     }
+  }
+
+  const handleRunCode = () => {
+    // 더 나은 Python playground인 Replit을 사용
+    const encodedCode = encodeURIComponent(code)
+    // Replit의 Python 환경으로 코드 전송
+    window.open(`https://replit.com/languages/python3?code=${encodedCode}`, '_blank')
   }
 
   return (
@@ -48,8 +72,26 @@ export default function CodeBlock({
         )}
         <div className="code-content">
           <pre>
-            <code>{code}</code>
+            <code ref={codeRef} className="language-python">{code}</code>
           </pre>
+        </div>
+        <div className="code-actions">
+          {showCopy && (
+            <button 
+              onClick={handleCopy}
+              className="action-button copy-button"
+              title="코드 복사"
+            >
+              {copied ? '✓ 복사됨' : '📋 복사'}
+            </button>
+          )}
+          <button 
+            onClick={handleRunCode}
+            className="action-button run-button"
+            title="온라인에서 실행"
+          >
+            ▶️ 실행
+          </button>
         </div>
       </div>
 

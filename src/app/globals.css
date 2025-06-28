@@ -372,25 +372,50 @@ a:visited {
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
 
+
+
 .explanation {
   margin: 32px 0 0;
-  padding: 16px;
-  background-color: #1f2937;
-  border-left: 4px solid #60a5fa;
-  border-radius: 0 8px 8px 0;
-  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
 
-.explanation p {
-  margin: 0 0 16px 0;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #d1d5db;
+.explanation p+p {
+  margin: 16px 0 0;
 }
 
-.explanation p:last-child {
-  margin-bottom: 0;
+/* 코드 액션 버튼들 */
+.code-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 8px;
 }
+
+.action-button {
+  padding: 6px 12px;
+  background: #333;
+  color: #999;
+  border: 1px solid #555;
+  border-radius: 3px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action-button:hover {
+  background: #444;
+  color: #ccc;
+}
+
+.copy-button.copied {
+  background: #0f5132;
+  color: #d1e7dd;
+}
+
+.run-button:hover {
+  background: #0d6efd;
+  color: white;
+}
+
 
 .navigation {
   display: flex;

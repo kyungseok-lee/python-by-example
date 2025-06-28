@@ -14,9 +14,9 @@
     "title": "Literals",
     "slug": "literals",
     "description": "Python has various value types including strings, integers, floats, booleans, etc.",
-    "code": "print(\"python\" + \"rocks\")\nprint(\"1+1 =\", 1+1)\nprint(\"7.0/3.0 =\", 7.0/3.0)\nprint(True and False)\nprint(True or False)\nprint(not True)",
-    "explanation": "Strings can be concatenated with +. Numbers support arithmetic. Booleans work with logical operators.",
-    "output": "pythonrocks\n1+1 = 2\n7.0/3.0 = 2.3333333333333335\nFalse\nTrue\nFalse",
+    "code": "# String literals and concatenation\nprint(\"python\" + \"rocks\")\nprint(\"Hello\", \"World\")\n\n# Integer and float arithmetic\nprint(\"1+1 =\", 1+1)\nprint(\"7.0/3.0 =\", 7.0/3.0)\nprint(\"10//3 =\", 10//3)  # Floor division\nprint(\"10%3 =\", 10%3)   # Modulo\n\n# Boolean operations\nprint(\"True and False:\", True and False)\nprint(\"True or False:\", True or False)\nprint(\"not True:\", not True)",
+    "explanation": "Python supports various literal types. Strings can be concatenated with + or printed with commas. Numbers support arithmetic operations including floor division (//) and modulo (%). Booleans work with logical operators and, or, not.",
+    "output": "pythonrocks\nHello World\n1+1 = 2\n7.0/3.0 = 2.3333333333333335\n10//3 = 3\n10%3 = 1\nTrue and False: False\nTrue or False: True\nnot True: False",
     "order": 2
   },
   {
@@ -74,9 +74,9 @@
     "title": "Lists",
     "slug": "lists",
     "description": "Lists are Python's basic sequence type.",
-    "code": "s = []\nprint(\"emp:\", s)\n\ns = [\"a\", \"b\", \"c\"]\nprint(\"set:\", s)\nprint(\"get:\", s[2])\nprint(\"len:\", len(s))\n\ns.append(\"d\")\nprint(\"apd:\", s)\n\nc = s.copy()\nprint(\"cpy:\", c)",
-    "explanation": "Lists in Python are ordered, mutable sequences that can hold items of any type.",
-    "output": "emp: []\nset: ['a', 'b', 'c']\nget: c\nlen: 3\napd: ['a', 'b', 'c', 'd']\ncpy: ['a', 'b', 'c', 'd']",
+    "code": "# Creating and working with lists\nmy_list = []\nprint(\"Empty list:\", my_list)\n\n# List with initial values\nfruits = [\"apple\", \"banana\", \"cherry\"]\nprint(\"Fruits:\", fruits)\nprint(\"First fruit:\", fruits[0])\nprint(\"Last fruit:\", fruits[-1])  # Negative indexing\nprint(\"Length:\", len(fruits))\n\n# Adding elements\nfruits.append(\"date\")\nfruits.insert(1, \"blueberry\")  # Insert at index 1\nprint(\"After adding:\", fruits)\n\n# List slicing\nprint(\"First two:\", fruits[:2])\nprint(\"Last two:\", fruits[-2:])\n\n# List comprehension\nsquares = [x**2 for x in range(5)]\nprint(\"Squares:\", squares)",
+    "explanation": "Lists are ordered, mutable sequences. They support indexing (including negative), slicing, and list comprehensions for creating new lists efficiently.",
+    "output": "Empty list: []\nFruits: ['apple', 'banana', 'cherry']\nFirst fruit: apple\nLast fruit: cherry\nLength: 3\nAfter adding: ['apple', 'blueberry', 'banana', 'cherry', 'date']\nFirst two: ['apple', 'blueberry']\nLast two: ['cherry', 'date']\nSquares: [0, 1, 4, 9, 16]",
     "order": 8
   },
   {
@@ -114,9 +114,9 @@
     "title": "Functions",
     "slug": "functions",
     "description": "Functions are central in Python.",
-    "code": "def plus(a, b):\n    return a + b\n\nres = plus(1, 2)\nprint(\"1+2 =\", res)\n\ndef greet(name, greeting=\"Hello\"):\n    return f\"{greeting}, {name}!\"\n\nprint(greet(\"Alice\"))\nprint(greet(\"Bob\", \"Hi\"))",
-    "explanation": "Functions in Python are defined with def. They can have default parameter values.",
-    "output": "1+2 = 3\nHello, Alice!\nHi, Bob!",
+    "code": "# Basic function with return value\ndef add_numbers(a, b):\n    \"\"\"Add two numbers and return the result.\"\"\"\n    return a + b\n\nresult = add_numbers(10, 5)\nprint(f\"10 + 5 = {result}\")\n\n# Function with default parameters\ndef greet(name, greeting=\"Hello\", punctuation=\"!\"):\n    return f\"{greeting}, {name}{punctuation}\"\n\nprint(greet(\"Alice\"))\nprint(greet(\"Bob\", \"Hi\"))\nprint(greet(\"Charlie\", \"Welcome\", \".\"))\n\n# Function with *args and **kwargs\ndef flexible_function(*args, **kwargs):\n    print(f\"Args: {args}\")\n    print(f\"Kwargs: {kwargs}\")\n    return len(args) + len(kwargs)\n\ncount = flexible_function(1, 2, 3, name=\"Python\", version=3.9)\nprint(f\"Total arguments: {count}\")",
+    "explanation": "Python functions support default parameters, variable arguments (*args), and keyword arguments (**kwargs). Docstrings provide function documentation.",
+    "output": "10 + 5 = 15\nHello, Alice!\nHi, Bob!\nWelcome, Charlie.\nArgs: (1, 2, 3)\nKwargs: {'name': 'Python', 'version': 3.9}\nTotal arguments: 5",
     "order": 12
   },
   {
