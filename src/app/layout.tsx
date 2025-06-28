@@ -26,6 +26,11 @@ export default function RootLayout({
             <div className="body">
               {children}
             </div>
+            <div className="footer">
+              <p>
+                Inspired by <Link href="https://gobyexample.com">Go by Example</Link>
+              </p>
+            </div>
           </div>
         </AppProvider>        
       </body>
