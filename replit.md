@@ -78,6 +78,10 @@ Python by Example은 Go by Example에서 영감을 받은 파이썬 학습 플�
   - 검정 배경(#000000)과 개선된 색상 팔레트 적용
   - 파이썬 파비콘 추가 및 메타데이터 개선
   - 카테고리 페이지 제거하고 단순한 예제 목록 구조로 최적화
+  - 메뉴 스타일 최적화: 간격을 1px로 축소, 호버 효과 단순화
+  - Go by Example 크레딧 푸터 추가
+  - 새로운 16개 카테고리 구조로 완전 재편: Introduction & Setup부터 실무 활용 예제까지
+  - 20개 실무 중심 예제로 확장: Hello World부터 Decorators까지 단계별 학습 구성
 
 ## User Preferences
 
