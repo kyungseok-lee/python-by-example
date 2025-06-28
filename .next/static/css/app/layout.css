@@ -553,9 +553,9 @@ a:visited {
 /* Footer Content Layout */
 .footer-content {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  gap: 12px;
+  width: 100%;
 }
 
 .footer-content p {
@@ -563,7 +563,7 @@ a:visited {
 }
 
 .footer-content .language-selector {
-  margin-top: 8px;
+  margin: 0;
 }
 
 .footer-content .language-select {
