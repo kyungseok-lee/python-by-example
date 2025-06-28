@@ -41,7 +41,6 @@ export default function ExamplePage({ params }: ExamplePageProps) {
       <CodeBlock
         code={example.code}
         output={example.output}
-        title={example.title}
       />
 
       <div className="explanation">
