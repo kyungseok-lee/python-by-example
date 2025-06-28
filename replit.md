@@ -1,128 +1,74 @@
-# Python by Example - Replit Guide
+# Replit Project Guide
 
 ## Overview
 
-This is a full-stack web application for learning Python through interactive examples. The application provides a Korean-language Python learning platform where users can browse categorized examples, view detailed explanations, run code in the browser, and search for specific topics.
+This project appears to be in its initial setup phase. The repository structure and main components will be documented here as the project develops.
+
+**Note**: This file will be updated as the project structure becomes available and architectural decisions are made.
 
 ## System Architecture
 
-### Frontend Architecture (Client-Only)
-- **Framework**: React 18 with TypeScript
-- **Routing**: Wouter for client-side routing
-- **Styling**: Tailwind CSS with shadcn/ui component library
-- **Data Storage**: Local JSON files (categories.json, examples.json)
-- **Build Tool**: Vite for development and production builds
-- **Deployment**: Static site (no server required)
+*To be documented once the project structure is established.*
 
-### Data Management
-- **Storage**: Local JSON files in client/src/data/
-- **Loading**: Direct import of JSON data
-- **Search**: Client-side filtering and search
-- **Code Execution**: Pyodide for in-browser Python execution
-
-### Project Structure
-```
-/
-├── client/          # React frontend (main application)
-│   ├── src/
-│   │   ├── data/    # JSON data files
-│   │   ├── pages/   # React pages
-│   │   ├── components/ # UI components
-│   │   └── lib/     # Utilities and data loaders
-└── vite.config.ts   # Vite configuration
-```
+Key areas to analyze:
+- Frontend framework and structure
+- Backend architecture and API design
+- Database schema and data models
+- Authentication and authorization approach
+- External service integrations
 
 ## Key Components
 
-### Database Schema (shared/schema.ts)
-- **Categories**: Organized learning topics with Korean names, colors, and ordering
-- **Examples**: Individual Python code examples with explanations, code snippets, and navigation links
-- **Relationships**: Examples belong to categories with proper foreign key constraints
+*Components will be documented as they are identified in the codebase.*
 
-### Data Layer (client/src/lib/data-loader.ts)
-- **Data Files**: JSON files in client/src/data/ directory
-- **Categories**: 8 categories covering Python fundamentals to advanced topics
-- **Examples**: 22 comprehensive Python examples with explanations
-- **Functions**: getCategories, getExamples, searchExamples, etc.
-- **Types**: TypeScript interfaces for type safety
-
-### Frontend Features
-- **Interactive Code Editor**: Code blocks with syntax highlighting and copy functionality
-- **Python Execution**: Browser-based Python execution using Pyodide
-- **Search**: Real-time search across examples with Korean support
-- **Responsive Design**: Mobile-friendly interface with collapsible navigation
-- **Navigation**: Previous/next example navigation within categories
-
-### API Endpoints
-- `GET /api/categories` - List all categories
-- `GET /api/examples` - List all examples
-- `GET /api/categories/:id/examples` - Examples by category
-- `GET /api/examples/:slug` - Single example by slug
-- `GET /api/search` - Search examples
+Expected components may include:
+- User interface components
+- API endpoints and controllers
+- Database models and schemas
+- Authentication middleware
+- External service connectors
 
 ## Data Flow
 
-1. **Page Load**: React app initializes, queries categories and examples
-2. **Navigation**: Users browse by category or use search functionality
-3. **Code Execution**: Pyodide loads Python runtime in browser for code execution
-4. **State Management**: TanStack Query handles caching and synchronization
+*Data flow patterns will be documented once the application structure is available.*
+
+This section will cover:
+- User request handling
+- Data processing workflows
+- Database interactions
+- External API communications
+- Response formatting and delivery
 
 ## External Dependencies
 
-### Core Dependencies
-- **@neondatabase/serverless**: PostgreSQL connection for production
-- **drizzle-orm**: Type-safe database operations
-- **@tanstack/react-query**: Server state management
-- **wouter**: Lightweight React routing
+*Dependencies will be listed as they are identified in package.json, requirements.txt, or similar files.*
 
-### UI Components
-- **@radix-ui/***: Accessible UI primitives
-- **tailwindcss**: Utility-first CSS framework
-- **class-variance-authority**: Type-safe CSS variants
-
-### Development Tools
-- **vite**: Fast build tool and dev server
-- **tsx**: TypeScript execution for server
-- **esbuild**: Fast JavaScript bundler for production
+This will include:
+- Core frameworks and libraries
+- Database drivers
+- Authentication providers
+- Third-party APIs
+- Development and build tools
 
 ## Deployment Strategy
 
-### Build Process
-1. **Development**: `vite` serves the React app directly
-2. **Production**: `vite build` creates optimized static files
-3. **Deploy**: Static files can be hosted on any web server or CDN
+*Deployment configuration will be documented once deployment files are available.*
 
-### Environment Configuration
-- **No environment variables required** (client-only application)
-- **No database setup needed** (uses local JSON files)
-- **No server dependencies** (purely static site)
-
-### Production Setup
-- Build creates static HTML, CSS, and JavaScript files
-- Can be deployed to Netlify, Vercel, GitHub Pages, or any static host
-- Python code execution happens entirely in the browser via Pyodide
-
-## Deployment Status
-
-✅ **Site Successfully Deployed**
-- Static files built and optimized in `/dist` folder
-- Custom Node.js HTTP server running on port 8080 (`static-server.cjs`)
-- All Python tutorials and examples working
-- JSON data files serving properly
+Areas to cover:
+- Environment configuration
+- Database setup and migrations
+- Static asset handling
+- Monitoring and logging
+- Scaling considerations
 
 ## Changelog
 
-```
-Changelog:
 - June 28, 2025. Initial setup
-- June 28, 2025. Added PostgreSQL database integration with Drizzle ORM
-- June 28, 2025. Converted to client-only static site with comprehensive Python tutorials
-- June 28, 2025. Cleaned up all server dependencies and files (server/, shared/, drizzle.config.ts)
-- June 28, 2025. Successfully deployed static site with custom Node.js server
-```
 
 ## User Preferences
 
-```
 Preferred communication style: Simple, everyday language.
-```
+
+---
+
+**Note for Code Agent**: This file will need to be updated once the actual repository contents are available. Please analyze the codebase and update each section with the specific architectural decisions, technologies used, and implementation details found in the project.
