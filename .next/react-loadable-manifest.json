@@ -1,1 +1,14 @@
-{}
+{
+  "components/CodeBlock.tsx -> prismjs": {
+    "id": "components/CodeBlock.tsx -> prismjs",
+    "files": [
+      "static/chunks/_app-pages-browser_node_modules_prismjs_prism_js.js"
+    ]
+  },
+  "components/CodeBlock.tsx -> prismjs/components/prism-python.js": {
+    "id": "components/CodeBlock.tsx -> prismjs/components/prism-python.js",
+    "files": [
+      "static/chunks/_app-pages-browser_node_modules_prismjs_components_prism-python_js.js"
+    ]
+  }
+}
