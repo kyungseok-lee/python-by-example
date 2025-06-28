@@ -36,8 +36,6 @@ export default function ExamplePage({ params }: ExamplePageProps) {
 
   return (
     <div className="example-container">
-      <h1 className="example-title">Python by Example: {example.title}</h1>
-      
       <CodeBlock
         code={example.code}
         output={example.output}

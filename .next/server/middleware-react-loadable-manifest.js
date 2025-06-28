@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{}"
+self.__REACT_LOADABLE_MANIFEST="{\"components/DynamicHeader.tsx -> @/lib/data\":{\"id\":\"components/DynamicHeader.tsx -> @/lib/data\",\"files\":[\"static/chunks/_app-pages-browser_src_lib_data_ts.js\"]}}"

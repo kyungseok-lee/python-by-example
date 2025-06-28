@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from 'next'
 import './globals.css'
+import DynamicHeader from '@/components/DynamicHeader'
 
 export const metadata: Metadata = {
   title: 'Python by Example',
@@ -19,11 +20,7 @@ export default function RootLayout({
     <html lang="ko">
       <body>
         <div className="main-container">
-          <div className="header">
-            <h1 className="main-title">
-              <Link href="/">Python by Example</Link>
-            </h1>
-          </div>
+          <DynamicHeader />
           <div className="body">
             {children}
           </div>
