@@ -12,24 +12,22 @@ export default function HomePage() {
       
       <div className="intro">
         <p>
-          <Link href="https://python.org/">Python</Link>은 읽기 쉽고 배우기 쉬운 
-          오픈 소스 프로그래밍 언어입니다. 더 자세한 내용은{' '}
-          <Link href="https://docs.python.org/3/tutorial/">공식 튜토리얼</Link>을 
-          참고하세요.
+          <Link href="https://python.org/">Python</Link> is a powerful, open-source programming language known for its simplicity and versatility. It is widely used in web development, data science, automation, AI, and more. Please refer to the{' '}
+          <Link href="https://docs.python.org/3/tutorial/">official documentation</Link> for 
+          deeper insights.
         </p>
         
         <p>
-          <em>Python by Example</em>은 주석이 달린 예제 프로그램을 통해 
-          파이썬을 실습할 수 있는 입문서입니다.{' '}
-          <Link href="/example/hello-world">첫 번째 예제</Link>를 확인하거나 
-          아래 전체 목록을 둘러보세요.
+          <em>Python by Example</em> is a practical introduction to Python through annotated example programs. Start with the{' '}
+          <Link href="/example/hello-world">first example</Link> or 
+          explore the full list below.
         </p>
         
         <p>
-          별도의 언급이 없는 한, 여기의 예제들은{' '}
-          <Link href="https://www.python.org/downloads/">최신 파이썬 버전</Link>을 
-          가정하며 새로운 언어 기능을 사용할 수 있습니다. 
-          뭔가 작동하지 않는다면 최신 버전으로 업그레이드해 보세요.
+          Unless otherwise noted, the examples assume the{' '}
+          <Link href="https://www.python.org/downloads/">latest major version of Python</Link> and 
+          may include recent language features. 
+          If an example does not work as expected, make sure you're using the latest version.
         </p>
       </div>
 
