@@ -22,8 +22,9 @@ a:hover {
 
 /* 메인 컨테이너 */
 .main-container {
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 600px;
+  margin: 0;
+  margin-left: 60px;
   padding: 60px 20px;
 }
 
@@ -31,7 +32,7 @@ a:hover {
 .main-title {
   font-size: 48px;
   font-weight: 600;
-  text-align: center;
+  text-align: left;
   margin: 0 0 60px 0;
   color: #ffffff;
 }
@@ -298,8 +299,17 @@ code {
   }
 }
 
+@media (max-width: 768px) {
+  .main-container {
+    margin-left: 20px;
+    max-width: none;
+    padding: 40px 15px;
+  }
+}
+
 @media (max-width: 480px) {
   .main-container {
+    margin-left: 15px;
     padding: 30px 12px;
   }
   
@@ -317,7 +327,7 @@ code {
   margin-top: 60px;
   padding: 30px 0;
   border-top: 1px solid #374151;
-  text-align: center;
+  text-align: left;
 }
 
 .footer p {
