@@ -1,37 +1,35 @@
+'use client'
+
 import Link from "next/link";
 import { getExamples } from "@/lib/data";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function HomePage() {
   const examples = getExamples();
+  const { t } = useLanguage();
 
   return (
 <>
       <div className="intro">
         <p>
-          <Link href="https://python.org/">Python</Link> is a powerful,
-          open-source programming language known for its simplicity and
-          versatility. It is widely used in web development, data science,
-          automation, AI, and more. Please refer to the{" "}
+          <Link href="https://python.org/">Python</Link>{t('home.intro.python')}{" "}
           <Link href="https://docs.python.org/3/tutorial/">
-            official documentation
+            {t('home.intro.docs')}
           </Link>{" "}
-          for deeper insights.
+          {t('home.intro.refer')}
         </p>
 
         <p>
-          <em>Python by Example</em> is a practical introduction to Python
-          through annotated example programs. Start with the{" "}
-          <Link href="/example/hello-world">first example</Link> or explore the
-          full list below.
+          <em>Python by Example</em> {t('home.intro.about')}{" "}
+          <Link href="/example/hello-world">{t('home.intro.start')}</Link> {t('home.intro.start2')}
         </p>
 
         <p>
-          Unless otherwise noted, the examples assume the{" "}
+          {t('home.intro.version')}{" "}
           <Link href="https://www.python.org/downloads/">
-            latest major version of Python
+            {t('home.intro.latest')}
           </Link>{" "}
-          and may include recent language features. If an example does not work
-          as expected, make sure you're using the latest version.
+          {t('home.intro.version2')}
         </p>
       </div>
 

@@ -1,9 +1,12 @@
+'use client'
+
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { getExampleBySlug, getNavigationForExample } from "@/lib/data";
 import CodeBlock from "@/components/CodeBlock";
 import PageTitle from "@/components/PageTitle";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface ExamplePageProps {
   params: {
@@ -30,6 +33,7 @@ export async function generateMetadata({
 
 export default function ExamplePage({ params }: ExamplePageProps) {
   const example = getExampleBySlug(params.slug);
+  const { t } = useLanguage();
 
   if (!example) {
     notFound();
@@ -38,7 +42,7 @@ export default function ExamplePage({ params }: ExamplePageProps) {
   const navigation = getNavigationForExample(params.slug);
 
   return (
-    <div className="example-container">
+    <>
       <PageTitle title={`Python by Example: ${example.title}`} />
       
       <p className="example-description">{example.description}</p>
@@ -51,7 +55,7 @@ export default function ExamplePage({ params }: ExamplePageProps) {
 
       <div className="example-nav">
         <Link href="/" className="example-nav-index">
-          Home
+          {t('nav.index')}
         </Link>
 
         <div className="example-nav-examples">
@@ -76,6 +80,6 @@ export default function ExamplePage({ params }: ExamplePageProps) {
           )}
         </div>
       </div>
-    </div>
+    </>
   );
 }

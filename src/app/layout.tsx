@@ -2,7 +2,10 @@ import Link from "next/link";
 import type { Metadata } from 'next'
 import './globals.css'
 import DynamicHeader from '@/components/DynamicHeader'
+import LanguageSelector from '@/components/LanguageSelector'
+import FooterText from '@/components/FooterText'
 import { AppProvider } from '@/contexts/AppContext'
+import { LanguageProvider } from '@/contexts/LanguageContext'
 
 export const metadata: Metadata = {
   title: 'Python by Example',
@@ -20,19 +23,22 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <AppProvider>
-          <div className="main-container">
-            <DynamicHeader />
-            <div className="body">
-              {children}
+        <LanguageProvider>
+          <AppProvider>
+            <div className="main-container">
+              <div className="header-container">
+                <DynamicHeader />
+                <LanguageSelector />
+              </div>
+              <div className="body">
+                {children}
+              </div>
+              <div className="footer">
+                <FooterText />
+              </div>
             </div>
-            <div className="footer">
-              <p>
-                Inspired by <Link href="https://gobyexample.com">Go by Example</Link>
-              </p>
-            </div>
-          </div>
-        </AppProvider>        
+          </AppProvider>
+        </LanguageProvider>        
       </body>
     </html>
   )

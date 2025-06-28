@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 interface CodeBlockProps {
   code: string
@@ -17,6 +18,7 @@ export default function CodeBlock({
 }: CodeBlockProps) {
   const [copied, setCopied] = useState(false)
   const codeRef = useRef<HTMLElement>(null)
+  const { t } = useLanguage()
 
   useEffect(() => {
     const loadPrism = async () => {
@@ -52,7 +54,7 @@ export default function CodeBlock({
   }
 
   return (
-    <div>
+    <>
       {/* 코드 블록 */}
       <div className="code-block">
         {title && (
@@ -65,7 +67,7 @@ export default function CodeBlock({
                 onClick={handleCopy}
                 className="copy-button"
               >
-                {copied ? '복사됨!' : '복사'}
+                {copied ? t('button.copied') : t('button.copy')}
               </button>
             )}
           </div>
@@ -80,17 +82,17 @@ export default function CodeBlock({
             <button 
               onClick={handleCopy}
               className="action-button copy-button"
-              title="코드 복사"
+              title={t('button.copy')}
             >
-              {copied ? '✓ 복사됨' : '📋 복사'}
+              {copied ? `✓ ${t('button.copied')}` : `📋 ${t('button.copy')}`}
             </button>
           )}
           <button 
             onClick={handleRunCode}
             className="action-button run-button"
-            title="온라인에서 실행"
+            title={t('button.run')}
           >
-            ▶️ 실행
+            ▶️ {t('button.run')}
           </button>
         </div>
       </div>
@@ -101,6 +103,6 @@ export default function CodeBlock({
           {output}
         </div>
       )}
-    </div>
+    </>
   )
 }
