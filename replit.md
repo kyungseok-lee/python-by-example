@@ -102,6 +102,14 @@ This is a full-stack web application for learning Python through interactive exa
 - Can be deployed to Netlify, Vercel, GitHub Pages, or any static host
 - Python code execution happens entirely in the browser via Pyodide
 
+## Deployment Status
+
+✅ **Site Successfully Deployed**
+- Static files built and optimized in `/dist` folder
+- Custom Node.js HTTP server running on port 8080 (`static-server.cjs`)
+- All Python tutorials and examples working
+- JSON data files serving properly
+
 ## Changelog
 
 ```
@@ -110,6 +118,7 @@ Changelog:
 - June 28, 2025. Added PostgreSQL database integration with Drizzle ORM
 - June 28, 2025. Converted to client-only static site with comprehensive Python tutorials
 - June 28, 2025. Cleaned up all server dependencies and files (server/, shared/, drizzle.config.ts)
+- June 28, 2025. Successfully deployed static site with custom Node.js server
 ```
 
 ## User Preferences
