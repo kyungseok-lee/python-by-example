@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from 'next'
 import './globals.css'
 import DynamicHeader from '@/components/DynamicHeader'
-import { TitleProvider } from '@/contexts/TitleContext'
+import { AppProvider } from '@/contexts/AppContext'
 
 export const metadata: Metadata = {
   title: 'Python by Example',
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <TitleProvider>
+        <AppProvider>
           <div className="main-container">
             <DynamicHeader />
             <div className="body">
@@ -33,7 +33,7 @@ export default function RootLayout({
                 </p>
               </div>
             </div>
-        </TitleProvider>        
+        </AppProvider>        
       </body>
     </html>
   )

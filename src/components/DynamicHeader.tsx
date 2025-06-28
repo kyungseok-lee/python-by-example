@@ -1,15 +1,15 @@
 'use client'
 
 import Link from "next/link";
-import { useTitle } from '@/contexts/TitleContext'
+import { useAppState } from '@/contexts/AppContext'
 
 export default function DynamicHeader() {
-  const { title } = useTitle()
+  const { state } = useAppState()
   
   return (
     <div className="header">
       <h1 className="main-title">
-        <Link href="/">{title}</Link>
+        <Link href="/">{state.title}</Link>
       </h1>
     </div>
   )

@@ -82,6 +82,9 @@ Python by Example은 Go by Example에서 영감을 받은 파이썬 학습 플�
   - Go by Example 크레딧 푸터 추가
   - 새로운 16개 카테고리 구조로 완전 재편: Introduction & Setup부터 실무 활용 예제까지
   - 20개 실무 중심 예제로 확장: Hello World부터 Decorators까지 단계별 학습 구성
+  - 동적 제목 기능 구현: React Context API와 useReducer를 활용한 현대적 상태 관리
+  - 코드 정리: 미사용 파일 삭제, 컴포넌트명 개선 (TitleSetter → PageTitle, TitleContext → AppContext)
+  - 구문 하이라이팅 제거로 웹팩 오류 해결, 안정성 향상
 
 ## User Preferences
 

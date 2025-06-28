@@ -1,23 +1,23 @@
 'use client'
 
 import { useEffect } from 'react'
-import { useTitle } from '@/contexts/TitleContext'
+import { useAppState } from '@/contexts/AppContext'
 
-interface TitleSetterProps {
+interface PageTitleProps {
   title: string
 }
 
-export default function TitleSetter({ title }: TitleSetterProps) {
-  const { setTitle } = useTitle()
+export default function PageTitle({ title }: PageTitleProps) {
+  const { setTitle, resetTitle } = useAppState()
   
   useEffect(() => {
     setTitle(title)
     
     // 컴포넌트가 언마운트될 때 기본 제목으로 복원
     return () => {
-      setTitle("Python by Example")
+      resetTitle()
     }
-  }, [title, setTitle])
+  }, [title, setTitle, resetTitle])
   
   return null // 이 컴포넌트는 UI를 렌더링하지 않음
 }

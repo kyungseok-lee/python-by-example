@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { getExampleBySlug, getNavigationForExample } from "@/lib/data";
 import CodeBlock from "@/components/CodeBlock";
-import TitleSetter from "@/components/TitleSetter";
+import PageTitle from "@/components/PageTitle";
 
 interface ExamplePageProps {
   params: {
@@ -39,7 +39,7 @@ export default function ExamplePage({ params }: ExamplePageProps) {
 
   return (
     <div className="example-container">
-      <TitleSetter title={`Python by Example: ${example.title}`} />
+      <PageTitle title={`Python by Example: ${example.title}`} />
       
       <CodeBlock code={example.code} output={example.output} />
 
