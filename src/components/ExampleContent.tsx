@@ -58,7 +58,7 @@ export default function ExampleContent({
   const handleRunCode = () => {
     const encodedCode = encodeURIComponent(fullCode);
     window.open(
-      `https://replit.com/languages/python3?code=${encodedCode}`,
+      `https://python-playground.netlify.app/?code=${encodedCode}`,
       "_blank"
     );
   };

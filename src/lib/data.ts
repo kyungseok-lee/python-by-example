@@ -1,3 +1,4 @@
+// If you get a TS error, ensure you have a src/types/json.d.ts with: declare module '*.json';
 import examplesData from "@/data/examples.json";
 
 export interface Example {
@@ -12,11 +13,15 @@ export interface Example {
 }
 
 export const getExamples = (): Example[] => {
-  return examplesData.sort((a, b) => a.order - b.order);
+  return (examplesData as Example[]).sort(
+    (a: Example, b: Example) => a.order - b.order
+  );
 };
 
 export const getExampleBySlug = (slug: string): Example | undefined => {
-  return examplesData.find((example) => example.slug === slug);
+  return (examplesData as Example[]).find(
+    (example: Example) => example.slug === slug
+  );
 };
 
 export const getNavigationForExample = (
