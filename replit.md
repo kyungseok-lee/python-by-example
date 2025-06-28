@@ -18,7 +18,7 @@ This is a full-stack web application for learning Python through interactive exa
 - **Language**: TypeScript with ES modules
 - **Database**: PostgreSQL with Drizzle ORM
 - **Database Provider**: Neon Database (serverless PostgreSQL)
-- **Development**: In-memory storage fallback for development
+- **Storage**: DatabaseStorage implementation using PostgreSQL
 
 ### Monorepo Structure
 ```
@@ -38,8 +38,9 @@ This is a full-stack web application for learning Python through interactive exa
 
 ### Storage Layer (server/storage.ts)
 - **Interface**: `IStorage` defines all data operations
-- **Implementation**: `MemStorage` provides in-memory storage for development
+- **Implementation**: `DatabaseStorage` uses PostgreSQL via Drizzle ORM
 - **Features**: Category management, example retrieval, search functionality
+- **Database**: Persistent PostgreSQL storage with seeded sample data
 
 ### Frontend Features
 - **Interactive Code Editor**: Code blocks with syntax highlighting and copy functionality
@@ -102,6 +103,7 @@ This is a full-stack web application for learning Python through interactive exa
 ```
 Changelog:
 - June 28, 2025. Initial setup
+- June 28, 2025. Added PostgreSQL database integration with Drizzle ORM
 ```
 
 ## User Preferences

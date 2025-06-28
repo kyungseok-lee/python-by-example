@@ -1,4 +1,6 @@
 import { categories, examples, type Category, type Example, type InsertCategory, type InsertExample } from "@shared/schema";
+import { db } from "./db";
+import { eq, like, or } from "drizzle-orm";
 
 export interface IStorage {
   // Categories
@@ -40,7 +42,14 @@ export class MemStorage implements IStorage {
     ];
 
     categoryData.forEach(cat => {
-      const category: Category = { ...cat, id: this.categoryCurrentId++ };
+      const category: Category = { 
+        id: this.categoryCurrentId++,
+        name: cat.name,
+        nameKo: cat.nameKo,
+        description: cat.description || null,
+        color: cat.color,
+        order: cat.order
+      };
       this.categories.set(category.id, category);
     });
 
@@ -278,7 +287,20 @@ print("짝수:", even_numbers)`
     ];
 
     exampleData.forEach(ex => {
-      const example: Example = { ...ex, id: this.exampleCurrentId++ };
+      const example: Example = { 
+        id: this.exampleCurrentId++,
+        slug: ex.slug,
+        title: ex.title,
+        titleKo: ex.titleKo,
+        description: ex.description,
+        code: ex.code,
+        explanation: ex.explanation,
+        additionalExamples: ex.additionalExamples || null,
+        categoryId: ex.categoryId || null,
+        order: ex.order,
+        prevSlug: ex.prevSlug || null,
+        nextSlug: ex.nextSlug || null
+      };
       this.examples.set(example.id, example);
     });
   }
@@ -329,4 +351,66 @@ print("짝수:", even_numbers)`
   }
 }
 
-export const storage = new MemStorage();
+export class DatabaseStorage implements IStorage {
+  async getCategories(): Promise<Category[]> {
+    const result = await db.select().from(categories).orderBy(categories.order);
+    return result;
+  }
+
+  async getCategoryById(id: number): Promise<Category | undefined> {
+    const [category] = await db.select().from(categories).where(eq(categories.id, id));
+    return category || undefined;
+  }
+
+  async createCategory(insertCategory: InsertCategory): Promise<Category> {
+    const [category] = await db
+      .insert(categories)
+      .values(insertCategory)
+      .returning();
+    return category;
+  }
+
+  async getExamples(): Promise<Example[]> {
+    const result = await db.select().from(examples).orderBy(examples.order);
+    return result;
+  }
+
+  async getExamplesByCategory(categoryId: number): Promise<Example[]> {
+    const result = await db
+      .select()
+      .from(examples)
+      .where(eq(examples.categoryId, categoryId))
+      .orderBy(examples.order);
+    return result;
+  }
+
+  async getExampleBySlug(slug: string): Promise<Example | undefined> {
+    const [example] = await db.select().from(examples).where(eq(examples.slug, slug));
+    return example || undefined;
+  }
+
+  async createExample(insertExample: InsertExample): Promise<Example> {
+    const [example] = await db
+      .insert(examples)
+      .values(insertExample)
+      .returning();
+    return example;
+  }
+
+  async searchExamples(query: string): Promise<Example[]> {
+    const lowercaseQuery = `%${query.toLowerCase()}%`;
+    const result = await db
+      .select()
+      .from(examples)
+      .where(
+        or(
+          like(examples.title, lowercaseQuery),
+          like(examples.titleKo, lowercaseQuery),
+          like(examples.description, lowercaseQuery)
+        )
+      );
+    return result;
+  }
+}
+
+export const storage = new DatabaseStorage();
