@@ -1,9 +1,8 @@
-'use client'
+"use client";
 
 import Link from "next/link";
 import CodeBlock from "@/components/CodeBlock";
 import PageTitle from "@/components/PageTitle";
-import { useLanguage } from "@/contexts/LanguageContext";
 import { Example } from "@/lib/data";
 
 interface ExamplePageClientProps {
@@ -14,24 +13,25 @@ interface ExamplePageClientProps {
   };
 }
 
-export default function ExamplePageClient({ example, navigation }: ExamplePageClientProps) {
-  const { t } = useLanguage();
-
+export default function ExamplePageClient({
+  example,
+  navigation,
+}: ExamplePageClientProps) {
   return (
     <>
       <PageTitle title={`Python by Example: ${example.title}`} />
-      
+
       <p className="example-description">{example.description}</p>
-      
+
       <CodeBlock code={example.code} output={example.output} />
-      
+
       <div className="example-explanation">
         <p>{example.explanation}</p>
       </div>
 
       <div className="example-nav">
         <Link href="/" className="example-nav-index">
-          {t('nav.index')}
+          Index
         </Link>
 
         <div className="example-nav-examples">

@@ -1,83 +1,86 @@
-'use client'
+"use client";
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from "react";
 
 interface CodeSection {
-  explanation: string
-  code: string
+  explanation: string;
+  code: string;
 }
 
 interface ExampleContentProps {
-  title: string
-  description: string
-  codeSections: CodeSection[]
-  output?: string
-  fullCode: string
+  title: string;
+  description: string;
+  codeSections: CodeSection[];
+  output?: string;
+  fullCode: string;
 }
 
-export default function ExampleContent({ 
-  title, 
-  description, 
-  codeSections, 
-  output, 
-  fullCode 
+export default function ExampleContent({
+  title,
+  description,
+  codeSections,
+  output,
+  fullCode,
 }: ExampleContentProps) {
-  const [copied, setCopied] = useState(false)
-  const codeRefs = useRef<(HTMLElement | null)[]>([])
+  const [copied, setCopied] = useState(false);
+  const codeRefs = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
     const loadPrism = async () => {
-      if (typeof window !== 'undefined') {
+      if (typeof window !== "undefined") {
         try {
-          const Prism = (await import('prismjs')).default
-          await import('prismjs/components/prism-python.js')
-          
-          codeRefs.current.forEach(ref => {
+          const Prism = (await import("prismjs")).default;
+          await import("prismjs/components/prism-python.js");
+
+          codeRefs.current.forEach((ref) => {
             if (ref) {
-              Prism.highlightElement(ref)
+              Prism.highlightElement(ref);
             }
-          })
+          });
         } catch (error) {
-          console.log('Prism.js 로딩 실패, 기본 텍스트로 표시')
+          console.log("Prism.js 로딩 실패, 기본 텍스트로 표시");
         }
       }
-    }
-    loadPrism()
-  }, [codeSections])
+    };
+    loadPrism();
+  }, [codeSections]);
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(fullCode)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
+      await navigator.clipboard.writeText(fullCode);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
     } catch (err) {
-      console.error('복사 실패:', err)
+      console.error("복사 실패:", err);
     }
-  }
+  };
 
   const handleRunCode = () => {
-    const encodedCode = encodeURIComponent(fullCode)
-    window.open(`https://replit.com/languages/python3?code=${encodedCode}`, '_blank')
-  }
+    const encodedCode = encodeURIComponent(fullCode);
+    window.open(
+      `https://replit.com/languages/python3?code=${encodedCode}`,
+      "_blank"
+    );
+  };
 
   return (
     <div className="example-content">
       <div className="example-header">
         <p className="example-description">{description}</p>
         <div className="example-actions">
-          <button 
+          <button
             onClick={handleRunCode}
             className="action-button run-button"
             title="온라인에서 실행"
           >
             ▶️
           </button>
-          <button 
+          <button
             onClick={handleCopy}
             className="action-button copy-button"
             title="전체 코드 복사"
           >
-            {copied ? '✓' : '📋'}
+            {copied ? "✓" : "📋"}
           </button>
         </div>
       </div>
@@ -90,8 +93,10 @@ export default function ExampleContent({
             </div>
             <div className="code-cell">
               <pre>
-                <code 
-                  ref={el => { codeRefs.current[index] = el }}
+                <code
+                  ref={(el) => {
+                    codeRefs.current[index] = el;
+                  }}
                   className="language-python"
                 >
                   {section.code}
@@ -107,11 +112,14 @@ export default function ExampleContent({
           <div className="example-row">
             <div className="explanation-cell"></div>
             <div className="output-cell">
-              <pre className="output-content">$ python example.py{'\n'}{output}</pre>
+              <pre className="output-content">
+                $ python example.py{"\n"}
+                {output}
+              </pre>
             </div>
           </div>
         </div>
       )}
     </div>
-  )
+  );
 }

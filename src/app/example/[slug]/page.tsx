@@ -36,10 +36,5 @@ export default function ExamplePage({ params }: ExamplePageProps) {
 
   const navigation = getNavigationForExample(params.slug);
 
-  return (
-    <ExamplePageClient 
-      example={example} 
-      navigation={navigation} 
-    />
-  );
+  return <ExamplePageClient example={example} navigation={navigation} />;
 }
