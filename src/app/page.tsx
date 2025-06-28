@@ -15,9 +15,7 @@ export default function HomePage() {
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
             Python by Example
           </h1>
-          <p className="text-lg text-gray-600">
-            {totalExamples}개의 예제
-          </p>
+
         </div>
       </header>
 

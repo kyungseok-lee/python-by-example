@@ -69,6 +69,8 @@ Python by Example은 Go by Example에서 영감을 받은 파이썬 학습 플�
   - 홈페이지, 카테고리 페이지, 예제 페이지 구현
   - 코드 블록 컴포넌트와 구문 하이라이팅 구현
   - 반응형 UI 디자인 완성
+  - TailwindCSS 버전 충돌 해결을 위해 순수 CSS 구현으로 변경
+  - 사용자 요청에 따라 사이트 제목 및 헤더 문구 간소화
 
 ## User Preferences
 
