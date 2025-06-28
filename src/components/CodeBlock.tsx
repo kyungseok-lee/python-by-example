@@ -32,10 +32,10 @@ export default function CodeBlock({
     <div>
       {/* 코드 블록 */}
       <div className="code-block">
-        {(title || showCopy) && (
+        {title && (
           <div className="code-header">
             <div className="code-title">
-              {title || 'Code'}
+              {title}
             </div>
             {showCopy && (
               <button 
