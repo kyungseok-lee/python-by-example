@@ -253,6 +253,28 @@ code {
   font-size: 14px;
 }
 
+/* Python syntax highlighting styles */
+.comment {
+  color: #6b7280; /* gray-500 */
+}
+
+.keyword {
+  color: #3b82f6; /* blue-500 */
+  font-weight: 600;
+}
+
+.builtin {
+  color: #8b5cf6; /* violet-500 */
+}
+
+.string {
+  color: #f59e0b; /* amber-500 */
+}
+
+.number {
+  color: #ef4444; /* red-500 */
+}
+
 .keyword {
   color: #c084fc;
   font-weight: 500;
