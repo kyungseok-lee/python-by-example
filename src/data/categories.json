@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "파이썬이란 무엇인가?",
+    "slug": "what-is-python",
+    "description": "파이썬의 특징과 설치, 기본 사용법을 배워보세요",
+    "order": 1,
+    "color": "blue"
+  },
+  {
+    "id": 2,
+    "title": "자료형",
+    "slug": "data-types",
+    "description": "파이썬의 기본 자료형들을 학습합니다",
+    "order": 2,
+    "color": "green"
+  },
+  {
+    "id": 3,
+    "title": "제어문",
+    "slug": "control-statements",
+    "description": "if문, while문, for문으로 프로그램 흐름을 제어합니다",
+    "order": 3,
+    "color": "purple"
+  },
+  {
+    "id": 4,
+    "title": "입력과 출력",
+    "slug": "input-output",
+    "description": "사용자 입력과 파일 입출력을 다룹니다",
+    "order": 4,
+    "color": "orange"
+  },
+  {
+    "id": 5,
+    "title": "함수",
+    "slug": "functions",
+    "description": "함수의 정의와 활용법을 배웁니다",
+    "order": 5,
+    "color": "red"
+  },
+  {
+    "id": 6,
+    "title": "클래스",
+    "slug": "classes",
+    "description": "객체지향 프로그래밍의 핵심인 클래스를 학습합니다",
+    "order": 6,
+    "color": "indigo"
+  },
+  {
+    "id": 7,
+    "title": "모듈과 패키지",
+    "slug": "modules-packages",
+    "description": "코드를 모듈화하고 패키지로 구성하는 방법을 배웁니다",
+    "order": 7,
+    "color": "pink"
+  },
+  {
+    "id": 8,
+    "title": "예외처리",
+    "slug": "exception-handling",
+    "description": "오류를 처리하고 견고한 프로그램을 만드는 방법을 학습합니다",
+    "order": 8,
+    "color": "yellow"
+  },
+  {
+    "id": 9,
+    "title": "내장함수",
+    "slug": "built-in-functions",
+    "description": "파이썬에서 제공하는 유용한 내장함수들을 알아봅니다",
+    "order": 9,
+    "color": "teal"
+  },
+  {
+    "id": 10,
+    "title": "정규표현식",
+    "slug": "regular-expressions",
+    "description": "문자열 패턴 매칭을 위한 정규표현식을 배웁니다",
+    "order": 10,
+    "color": "gray"
+  }
+]
