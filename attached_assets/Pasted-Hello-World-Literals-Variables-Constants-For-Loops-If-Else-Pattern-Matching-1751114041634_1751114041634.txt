@@ -1,0 +1,169 @@
+Hello World
+
+Literals (숫자, 문자열, 불리언 등)
+
+Variables
+
+Constants
+
+For Loops
+
+If / Else
+
+Pattern Matching (match / case, Python 3.10+)
+
+Lists
+
+Tuples
+
+List Slicing
+
+Dictionaries
+
+Functions
+
+Multiple Return Values (튜플 반환)
+
+Variadic Functions (*args, **kwargs)
+
+Closures
+
+Recursion
+
+Iteration over Built-in Types (for x in …)
+
+References (객체 참조)
+
+Strings and Unicode
+
+Classes (Structs에 대응)
+
+Methods
+
+Duck Typing & Abstract Base Classes (Interfaces에 대응)
+
+Enums (enum 모듈)
+
+Inheritance & Composition (Struct Embedding에 대응)
+
+Generics (타입 힌트 typing.Generic)
+
+Iterators (__iter__, __next__)
+
+Exceptions
+
+Custom Exceptions
+
+Threads (threading.Thread)
+
+Coroutines & AsyncIO (async def, await)
+
+Queues (queue.Queue)
+
+Buffered Queues (maxsize 설정)
+
+Synchronization Primitives (Lock, Semaphore)
+
+Async Select (asyncio.wait)
+
+Timeouts (asyncio.wait_for, threading.Timer)
+
+Non-Blocking I/O (select, socket.setblocking(False))
+
+Graceful Shutdown (signal 핸들링)
+
+Iterating over Queues (while not queue.empty(): …)
+
+Timers (threading.Timer)
+
+Tickers / Scheduled Tasks (sched, asyncio.Task 반복)
+
+Worker Pools (concurrent.futures.ThreadPoolExecutor)
+
+Barriers (threading.Barrier)
+
+Rate Limiting (time.sleep 기반)
+
+Atomic Operations (threading.Lock 활용 카운터)
+
+Mutexes (threading.Lock)
+
+Stateful Threads / Tasks
+
+Sorting (sorted())
+
+Sorting by Functions (key= 파라미터)
+
+Raise (Panic에 대응)
+
+Context Managers (with, __enter__/__exit__)
+
+Recover (예외 처리) (try/except)
+
+String Methods (str.upper(), str.split(), …)
+
+String Formatting (f-strings, str.format())
+
+Text Templates (string.Template)
+
+Regular Expressions (re)
+
+JSON (json 모듈)
+
+XML (xml.etree.ElementTree)
+
+datetime
+
+Epoch (time.time())
+
+Time Formatting / Parsing (datetime.strptime, strftime)
+
+Random Numbers (random 모듈)
+
+Number Parsing (int(), float())
+
+URL Parsing (urllib.parse)
+
+SHA256 Hashes (hashlib)
+
+Base64 Encoding (base64)
+
+Reading Files (open, .read())
+
+Writing Files (open, .write())
+
+Line Filters (for line in open(): …)
+
+File Paths (pathlib.Path)
+
+Directories (os.makedirs, pathlib)
+
+Temporary Files & Directories (tempfile)
+
+Package Resources (importlib.resources)
+
+Testing & Benchmarking (unittest, pytest, timeit)
+
+Command-Line Arguments (sys.argv)
+
+Command-Line Flags (argparse)
+
+Subcommands (argparse 서브파서)
+
+Environment Variables (os.environ)
+
+Logging (logging 모듈)
+
+HTTP Client (requests 또는 urllib.request)
+
+HTTP Server (http.server 또는 Flask/FastAPI)
+
+Context Variables (contextvars)
+
+Spawning Processes (subprocess)
+
+Exec’ing Processes (subprocess.run)
+
+Signals (signal 모듈)
+
+Exit (sys.exit())
