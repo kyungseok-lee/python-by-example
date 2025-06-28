@@ -17,7 +17,7 @@ export default function PageTitle({ title }: PageTitleProps) {
     return () => {
       resetTitle()
     }
-  }, [title, setTitle, resetTitle])
+  }, [title]) // setTitle과 resetTitle은 안정적이므로 의존성에서 제거
   
   return null // 이 컴포넌트는 UI를 렌더링하지 않음
 }

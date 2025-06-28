@@ -45,7 +45,7 @@ export default function ExamplePage({ params }: ExamplePageProps) {
   return (
     <div className="example-container">
       <PageTitle title={`Python by Example: ${example.title}`} />
-      
+
       <ExampleContent
         title={example.title}
         description={example.description}
@@ -56,7 +56,7 @@ export default function ExamplePage({ params }: ExamplePageProps) {
 
       <div className="example-nav">
         <Link href="/" className="example-nav-index">
-          index
+          Home
         </Link>
 
         <div className="example-nav-examples">
@@ -67,6 +67,9 @@ export default function ExamplePage({ params }: ExamplePageProps) {
             >
               {navigation.prev.title}
             </Link>
+          )}
+          {navigation.prev && navigation.next && (
+            <span className="example-nav-separator"> | </span>
           )}
           {navigation.next && (
             <Link
