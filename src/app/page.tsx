@@ -42,6 +42,12 @@ export default function HomePage() {
           </li>
         ))}
       </ul>
+
+      <div className="footer">
+        <p>
+          <Link href="https://gobyexample.com/">Go by Example</Link>에서 영감을 받아 제작되었습니다.
+        </p>
+      </div>
     </div>
   )
 }
