@@ -49,7 +49,7 @@ export default function ExamplePage({ params }: ExamplePageProps) {
 
       <div className="example-nav">
         <Link href="/" className="example-nav-index">
-          Index
+          index
         </Link>
         
         <div className="example-nav-examples">
