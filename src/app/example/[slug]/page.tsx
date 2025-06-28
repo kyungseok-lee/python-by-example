@@ -1,11 +1,27 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { Metadata } from 'next'
 import { getExampleBySlug, getNavigationForExample } from '@/lib/data'
 import CodeBlock from '@/components/CodeBlock'
 
 interface ExamplePageProps {
   params: {
     slug: string
+  }
+}
+
+export async function generateMetadata({ params }: ExamplePageProps): Promise<Metadata> {
+  const example = getExampleBySlug(params.slug)
+  
+  if (!example) {
+    return {
+      title: 'Python by Example'
+    }
+  }
+
+  return {
+    title: `Python by Example: ${example.title}`,
+    description: example.explanation
   }
 }
 
@@ -20,6 +36,8 @@ export default function ExamplePage({ params }: ExamplePageProps) {
 
   return (
     <div className="example-container">
+      <h1 className="example-title">Python by Example: {example.title}</h1>
+      
       <CodeBlock
         code={example.code}
         output={example.output}
@@ -32,7 +50,7 @@ export default function ExamplePage({ params }: ExamplePageProps) {
 
       <div className="example-nav">
         <Link href="/" className="example-nav-index">
-          index
+          Index
         </Link>
         
         <div className="example-nav-examples">
