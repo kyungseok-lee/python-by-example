@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { highlightPythonCode } from '@/lib/highlight'
 
 interface CodeBlockProps {
   code: string
@@ -49,9 +48,7 @@ export default function CodeBlock({
         )}
         <div className="code-content">
           <pre>
-            <code dangerouslySetInnerHTML={{ 
-              __html: highlightPythonCode(code) 
-            }} />
+            <code>{code}</code>
           </pre>
         </div>
       </div>
