@@ -1,18 +1,36 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import LanguageSelector from '@/components/LanguageSelector'
-import { useLanguage } from '@/contexts/LanguageContext'
+import Link from "next/link";
 
 export default function FooterText() {
-  const { t } = useLanguage()
-
   return (
     <div className="footer-content">
       <p>
-        {t('site.inspiration')} <Link href="https://gobyexample.com">Go by Example</Link>
+        Inspired by{" "}
+        <Link
+          href="https://gobyexample.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Go by Example
+        </Link>
+        <span className="separator">|</span>
+        <Link
+          href="https://github.com/kyungseok-lee/python-by-example"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Source
+        </Link>
+        <span className="separator">|</span>
+        <Link
+          href="https://github.com/kyungseok-lee/python-by-example/LICENSE"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          License
+        </Link>
       </p>
-      <LanguageSelector />
     </div>
-  )
+  );
 }

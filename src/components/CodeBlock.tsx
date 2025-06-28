@@ -1,57 +1,56 @@
-'use client'
+"use client";
 
-import { useState, useEffect, useRef } from 'react'
-import { useLanguage } from '@/contexts/LanguageContext'
+import { useState, useEffect, useRef } from "react";
 
 interface CodeBlockProps {
-  code: string
-  output?: string
-  title?: string
-  showCopy?: boolean
+  code: string;
+  output?: string;
+  title?: string;
+  showCopy?: boolean;
 }
 
-export default function CodeBlock({ 
-  code, 
-  output, 
-  title, 
-  showCopy = true 
+export default function CodeBlock({
+  code,
+  output,
+  title,
+  showCopy = true,
 }: CodeBlockProps) {
-  const [copied, setCopied] = useState(false)
-  const codeRef = useRef<HTMLElement>(null)
-  const { t } = useLanguage()
+  const [copied, setCopied] = useState(false);
+  const codeRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const loadPrism = async () => {
-      if (typeof window !== 'undefined' && codeRef.current) {
+      if (typeof window !== "undefined" && codeRef.current) {
         try {
-          const Prism = (await import('prismjs')).default
+          const Prism = (await import("prismjs")).default;
           // Python 언어 지원 로드
-          await import('prismjs/components/prism-python.js')
-          Prism.highlightElement(codeRef.current)
+          await import("prismjs/components/prism-python.js");
+          Prism.highlightElement(codeRef.current);
         } catch (error) {
-          console.log('Prism.js 로딩 실패, 기본 텍스트로 표시')
+          console.log("Prism.js load failed, showing plain text");
         }
       }
-    }
-    loadPrism()
-  }, [code])
+    };
+    loadPrism();
+  }, [code]);
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(code)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
+      await navigator.clipboard.writeText(code);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
     } catch (err) {
-      console.error('복사 실패:', err)
+      console.error("Copy failed:", err);
     }
-  }
+  };
 
   const handleRunCode = () => {
-    // 더 나은 Python playground인 Replit을 사용
-    const encodedCode = encodeURIComponent(code)
-    // Replit의 Python 환경으로 코드 전송
-    window.open(`https://replit.com/languages/python3?code=${encodedCode}`, '_blank')
-  }
+    const encodedCode = encodeURIComponent(code);
+    window.open(
+      `https://python-playground.netlify.app/?code=${encodedCode}`,
+      "_blank"
+    );
+  };
 
   return (
     <>
@@ -59,40 +58,46 @@ export default function CodeBlock({
       <div className="code-block">
         {title && (
           <div className="code-header">
-            <div className="code-title">
-              {title}
-            </div>
+            <div className="code-title">{title}</div>
             {showCopy && (
-              <button 
+              <button
                 onClick={handleCopy}
-                className="copy-button"
+                className={`copy-button${copied ? " copied" : ""}`}
+                title="Copy"
               >
-                {copied ? t('button.copied') : t('button.copy')}
+                <span role="img" aria-label="copy">
+                  📋
+                </span>
+                {copied ? "Copied!" : "Copy"}
               </button>
             )}
           </div>
         )}
         <div className="code-content">
           <pre>
-            <code ref={codeRef} className="language-python">{code}</code>
+            <code ref={codeRef} className="language-python">
+              {code}
+            </code>
           </pre>
         </div>
         <div className="code-actions">
           {showCopy && (
-            <button 
+            <button
               onClick={handleCopy}
-              className="action-button copy-button"
-              title={t('button.copy')}
+              className={`copy-button${copied ? " copied" : ""}`}
+              title="Copy"
             >
-              {copied ? `✓ ${t('button.copied')}` : `📋 ${t('button.copy')}`}
+              <span role="img" aria-label="copy">
+                📋
+              </span>
+              {copied ? " Copied!" : " Copy"}
             </button>
           )}
-          <button 
-            onClick={handleRunCode}
-            className="action-button run-button"
-            title={t('button.run')}
-          >
-            ▶️ {t('button.run')}
+          <button onClick={handleRunCode} className="run-button" title="Run">
+            <span role="img" aria-label="run">
+              ▶️
+            </span>
+            {" Run"}
           </button>
         </div>
       </div>
@@ -100,9 +105,10 @@ export default function CodeBlock({
       {/* 출력 결과 */}
       {output && (
         <div className="output-block">
-          {output}
+          Output:
+          <pre>{output}</pre>
         </div>
       )}
     </>
-  )
+  );
 }

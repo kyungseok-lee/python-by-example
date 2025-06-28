@@ -107,9 +107,8 @@ ul {
   list-style: none;
 }
 
-/* Base Styles */
 body {
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
   font-size: 16px;
   line-height: 1.5;
   background-color: #1f1f1f;
@@ -126,7 +125,6 @@ a:visited {
   text-decoration: underline;
 }
 
-/* Main Layout */
 .main-container {
   max-width: 640px;
   margin: 0 auto;
@@ -147,12 +145,11 @@ a:visited {
   padding: 32px 0;
 }
 
-/* Body 하위 모든 요소에 32px 상하 간격 적용 */
-.main-container .body>* {
+.main-container .body > * {
   margin-top: 32px;
 }
 
-.main-container .body>*:first-child {
+.main-container .body > *:first-child {
   margin-top: 0;
 }
 
@@ -166,12 +163,14 @@ a:visited {
   color: #898e98;
 }
 
-/* Introduction Section */
 .intro {
   padding: 0;
 }
 
-/* Examples List */
+.intro p + p {
+  margin-top: 16px;
+}
+
 .examples-list {
   list-style: none;
 }
@@ -191,7 +190,6 @@ a:visited {
   text-decoration: underline;
 }
 
-/* Code Block Styles */
 .code-block {
   background-color: #0f172a;
   border: 1px solid #334155;
@@ -227,25 +225,24 @@ a:visited {
   padding: 16px;
   background-color: #0f172a;
   color: #e2e8f0;
-  font-family: 'JetBrains Mono', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-family: "JetBrains Mono", "Monaco", "Menlo", "Ubuntu Mono", monospace;
   font-size: 14px;
   line-height: 1.5;
   overflow-x: auto;
 }
 
 .code-block .code-content code {
-  font-family: 'JetBrains Mono', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-family: "JetBrains Mono", "Monaco", "Menlo", "Ubuntu Mono", monospace;
   font-size: 14px;
   line-height: 1.5;
 }
 
-/* Output Block */
 .output-block {
   background-color: #111827;
   border: 1px solid #374151;
   border-radius: 8px;
   padding: 16px;
-  font-family: 'JetBrains Mono', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-family: "JetBrains Mono", "Monaco", "Menlo", "Ubuntu Mono", monospace;
   font-size: 14px;
   color: #34d399;
   line-height: 1.5;
@@ -254,22 +251,18 @@ a:visited {
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
 
-/* Button Styles */
-.copy-button {
-  background: #374151;
-  border: 1px solid #4b5563;
-  color: #e5e7eb;
-  padding: 8px 16px;
-  font-size: 12px;
-  cursor: pointer;
+.copy-button,
+.run-button {
+  padding: 4px 8px;
+  font-size: 10px;
   border-radius: 4px;
-  font-weight: 500;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
 .copy-button:hover {
   background: #4b5563;
   border-color: #6b7280;
+  color: #ccc;
 }
 
 .copy-button.copied {
@@ -277,40 +270,24 @@ a:visited {
   color: #d1e7dd;
 }
 
-.action-button {
-  padding: 6px 12px;
-  background: #333;
-  color: #999;
-  border: 1px solid #555;
-  border-radius: 3px;
-  font-size: 12px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.action-button:hover {
+.run-button:hover {
   background: #444;
   color: #ccc;
 }
 
-.run-button:hover {
-  background: #0d6efd;
-  color: white;
-}
-
 .code-actions {
   display: flex;
-  gap: 8px;
+  gap: 4px;
   justify-content: flex-end;
-  margin-top: 8px;
+  margin-top: 0;
+  padding: 0 8px 8px 8px;
 }
 
-/* Example Page Styles */
 .example-title {
   font-size: 32px;
   font-weight: normal;
   margin: 0 0 16px 0;
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
 }
 
 .example-header {
@@ -343,15 +320,10 @@ a:visited {
   margin: 0;
 }
 
-.explanation {
-  /* 간격은 body의 전역 설정을 따름 */
-}
-
-.explanation p+p {
+.explanation p + p {
   margin: 16px 0 0;
 }
 
-/* Example Table Layout */
 .example-table {
   width: 100%;
   border-collapse: collapse;
@@ -389,7 +361,7 @@ a:visited {
   background: transparent;
   border: none;
   padding: 0;
-  font-family: 'JetBrains Mono', 'Fira Code', Consolas, 'Courier New', monospace;
+  font-family: "JetBrains Mono", "Fira Code", Consolas, "Courier New", monospace;
   font-size: 13px;
   line-height: 1.5;
   color: #f8f8f2;
@@ -413,13 +385,12 @@ a:visited {
   background: transparent;
   border: none;
   padding: 0;
-  font-family: 'JetBrains Mono', 'Fira Code', Consolas, 'Courier New', monospace;
+  font-family: "JetBrains Mono", "Fira Code", Consolas, "Courier New", monospace;
   font-size: 13px;
   line-height: 1.5;
   color: #999;
 }
 
-/* Syntax Highlighting */
 .comment {
   color: #6b7280;
   font-style: italic;
@@ -454,7 +425,6 @@ a:visited {
   color: #fcd34d;
 }
 
-/* Legacy Navigation (Go by Example style) */
 .example-nav {
   display: flex;
   justify-content: space-between;
@@ -497,75 +467,22 @@ a:visited {
 
 .example-nav-examples .example-nav-separator {
   color: #303030;
-  margin: 0 16px;
+  margin: 0 8px;
   height: 12px;
   overflow: hidden;
 }
 
-/* Header Container for Language Selector */
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 32px;
-}
-
-.main-container .header {
-  margin-bottom: 0;
-}
-
-/* Language Selector */
-.language-selector {
-  position: relative;
-}
-
-.language-select {
-  background-color: #1a1a1a;
-  border: 1px solid #333;
-  color: #e4e4e4;
-  padding: 8px 12px;
-  border-radius: 4px;
-  font-size: 14px;
-  cursor: pointer;
-  outline: none;
-  transition: all 0.2s ease;
-}
-
-.language-select:hover {
-  border-color: #555;
-  background-color: #222;
-}
-
-.language-select:focus {
-  border-color: #666;
-  box-shadow: 0 0 0 2px rgba(102, 102, 102, 0.2);
-}
-
-.language-select option {
-  background-color: #1a1a1a;
-  color: #e4e4e4;
-  padding: 8px;
-}
-
-/* Footer Content Layout */
 .footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+  line-height: 1;
 }
 
-.footer-content p {
-  margin: 0;
-}
-
-.footer-content .language-selector {
-  margin: 0;
-}
-
-.footer-content .language-select {
-  font-size: 12px;
-  padding: 6px 10px;
-  background-color: #222;
-  border: 1px solid #444;
+.footer-content span.separator {
+  display: inline-block;
+  margin: 0 8px;
+  font-size: 1em;
+  line-height: 1;
+  color: #555;
+  opacity: 0.7;
+  vertical-align: middle;
+  user-select: none;
 }
