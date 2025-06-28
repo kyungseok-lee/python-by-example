@@ -87,6 +87,9 @@ Python by Example은 Go by Example에서 영감을 받은 파이썬 학습 플�
   - 구문 하이라이팅 제거로 웹팩 오류 해결, 안정성 향상
   - Go by Example 스타일 2-column 레이아웃 구현 후 사용자 요청으로 1-column으로 복원
   - Navigation separator 추가 및 스타일링 최적화 (8px 간격, #555 색상)
+  - 예제 코드를 더 풍부하고 실무적으로 개선: 파일명, 상세 주석, 실행 명령어 추가
+  - Hello World, Literals, Variables, For Loops, Variadic Functions 예제를 대폭 확장
+  - 모든 예제에 `$ python filename.py` 실행 명령어 포함하여 실용성 향상
 
 ## User Preferences
 

@@ -4,9 +4,9 @@
     "title": "Hello World",
     "slug": "hello-world",
     "description": "Our first program will print the classic \"hello world\" message.",
-    "code": "print(\"hello world\")",
-    "explanation": "To run the program, put the code in hello-world.py and use python.",
-    "output": "hello world",
+    "code": "#!/usr/bin/env python3\n# hello-world.py\n# This is our first Python program\n\n# Print a simple greeting message\nprint(\"hello world\")\n\n# You can also print multiple things\nprint(\"Welcome to\", \"Python!\")\n\n# Print with different separators\nprint(\"Python\", \"is\", \"awesome\", sep=\"-\")\n\n# Print with custom end character\nprint(\"Learning Python\", end=\"!\\n\")",
+    "explanation": "Python's print() function is the most basic way to output text. You can print strings, multiple values separated by commas, and customize the separator and ending characters.",
+    "output": "$ python hello-world.py\nhello world\nWelcome to Python!\nPython-is-awesome\nLearning Python!",
     "order": 1
   },
   {
@@ -14,9 +14,9 @@
     "title": "Literals",
     "slug": "literals",
     "description": "Python has various value types including strings, integers, floats, booleans, etc.",
-    "code": "# String literals and concatenation\nprint(\"python\" + \"rocks\")\nprint(\"Hello\", \"World\")\n\n# Integer and float arithmetic\nprint(\"1+1 =\", 1+1)\nprint(\"7.0/3.0 =\", 7.0/3.0)\nprint(\"10//3 =\", 10//3)  # Floor division\nprint(\"10%3 =\", 10%3)   # Modulo\n\n# Boolean operations\nprint(\"True and False:\", True and False)\nprint(\"True or False:\", True or False)\nprint(\"not True:\", not True)",
-    "explanation": "Python supports various literal types. Strings can be concatenated with + or printed with commas. Numbers support arithmetic operations including floor division (//) and modulo (%). Booleans work with logical operators and, or, not.",
-    "output": "pythonrocks\nHello World\n1+1 = 2\n7.0/3.0 = 2.3333333333333335\n10//3 = 3\n10%3 = 1\nTrue and False: False\nTrue or False: True\nnot True: False",
+    "code": "#!/usr/bin/env python3\n# literals.py\n# Demonstrating different types of literals in Python\n\n# String literals and operations\nprint(\"=== String Literals ===\")\nprint(\"python\" + \"rocks\")  # Concatenation\nprint(\"Hello\", \"World\")    # Comma-separated printing\nprint(f\"Formatted: {'Python'} version {3.9}\")  # f-strings\nprint(\"Multi-line\\nstring with\\nline breaks\")\nprint(r\"Raw string: \\n doesn't create newline\")\n\n# Numeric literals and arithmetic\nprint(\"\\n=== Numeric Literals ===\")\nprint(f\"Integer: {42}\")\nprint(f\"Float: {3.14159}\")\nprint(f\"Scientific notation: {1.23e-4}\")\nprint(f\"Binary: {0b1010} (decimal: {0b1010})\")\nprint(f\"Hex: {0xFF} (decimal: {0xFF})\")\nprint(f\"Octal: {0o755} (decimal: {0o755})\")\n\n# Arithmetic operations\nprint(\"\\n=== Arithmetic Operations ===\")\nprint(f\"1+1 = {1+1}\")\nprint(f\"7.0/3.0 = {7.0/3.0}\")\nprint(f\"10//3 = {10//3}\")  # Floor division\nprint(f\"10%3 = {10%3}\")   # Modulo\nprint(f\"2**8 = {2**8}\")   # Exponentiation\n\n# Boolean literals and operations\nprint(\"\\n=== Boolean Literals ===\")\nprint(f\"True and False: {True and False}\")\nprint(f\"True or False: {True or False}\")\nprint(f\"not True: {not True}\")\nprint(f\"bool(0): {bool(0)}\")\nprint(f\"bool('hello'): {bool('hello')}\")\n\n# Special literals\nprint(\"\\n=== Special Literals ===\")\nprint(f\"None value: {None}\")\nprint(f\"Empty list: {[]}\")\nprint(f\"Empty dict: {{}}\")",
+    "explanation": "Python supports rich literal types including strings (with f-strings, raw strings), numbers (integers, floats, scientific notation, different bases), booleans, and special values like None. Each type has specific operations and behaviors.",
+    "output": "$ python literals.py\n=== String Literals ===\npythonrocks\nHello World\nFormatted: Python version 3.9\nMulti-line\nstring with\nline breaks\nRaw string: \\n doesn't create newline\n\n=== Numeric Literals ===\nInteger: 42\nFloat: 3.14159\nScientific notation: 0.000123\nBinary: 10 (decimal: 10)\nHex: 255 (decimal: 255)\nOctal: 493 (decimal: 493)\n\n=== Arithmetic Operations ===\n1+1 = 2\n7.0/3.0 = 2.3333333333333335\n10//3 = 3\n10%3 = 1\n2**8 = 256\n\n=== Boolean Literals ===\nTrue and False: False\nTrue or False: True\nnot True: False\nbool(0): False\nbool('hello'): True\n\n=== Special Literals ===\nNone value: None\nEmpty list: []\nEmpty dict: {}",
     "order": 2
   },
   {
@@ -24,9 +24,9 @@
     "title": "Variables",
     "slug": "variables",
     "description": "In Python, variables are declared and assigned with =.",
-    "code": "a = \"initial\"\nprint(a)\n\nb = 1\nc = 2\nprint(b, c)\n\nd = True\nprint(d)",
-    "explanation": "Python uses dynamic typing - you don't need to declare variable types explicitly.",
-    "output": "initial\n1 2\nTrue",
+    "code": "#!/usr/bin/env python3\n# variables.py\n# Demonstrating variable assignment and types\n\n# String variable\na = \"initial\"\nprint(f\"String variable a: {a}\")\n\n# Multiple assignment\nb = 1\nc = 2\nprint(f\"Numbers b and c: {b}, {c}\")\n\n# Python is dynamically typed\nd = True\nprint(f\"Boolean d: {d}\")\n\n# Variables can change type\nvalue = 42        # integer\nprint(f\"value as int: {value}\")\nvalue = \"hello\"   # now string\nprint(f\"value as string: {value}\")\nvalue = 3.14      # now float\nprint(f\"value as float: {value}\")\n\n# Multiple assignment in one line\nx, y, z = 1, 2, 3\nprint(f\"Multiple assignment: x={x}, y={y}, z={z}\")",
+    "explanation": "Python uses dynamic typing - you don't need to declare variable types explicitly. Variables can change types during runtime, and you can assign multiple variables at once.",
+    "output": "$ python variables.py\nString variable a: initial\nNumbers b and c: 1, 2\nBoolean d: True\nvalue as int: 42\nvalue as string: hello\nvalue as float: 3.14\nMultiple assignment: x=1, y=2, z=3",
     "order": 3
   },
   {
@@ -44,9 +44,9 @@
     "title": "For Loops",
     "slug": "for-loops",
     "description": "for is Python's primary looping construct.",
-    "code": "for j in range(1, 4):\n    print(j)\n\nfor i in range(10):\n    if i >= 2:\n        break\n    print(\"loop\")\n\nfor n in range(6):\n    if n % 2 == 0:\n        continue\n    print(n)",
-    "explanation": "Python's for loop iterates over sequences. break exits the loop, continue skips to the next iteration.",
-    "output": "1\n2\n3\nloop\nloop\n1\n3\n5",
+    "code": "#!/usr/bin/env python3\n# for-loops.py\n# Demonstrating different types of for loops\n\n# Basic range loop\nprint(\"Basic range(1, 4):\")\nfor j in range(1, 4):\n    print(f\"  j = {j}\")\n\n# Loop with break\nprint(\"\\nLoop with break:\")\nfor i in range(10):\n    if i >= 2:\n        print(f\"  Breaking at i = {i}\")\n        break\n    print(f\"  loop iteration {i}\")\n\n# Loop with continue\nprint(\"\\nLoop with continue (odd numbers only):\")\nfor n in range(6):\n    if n % 2 == 0:  # skip even numbers\n        continue\n    print(f\"  odd number: {n}\")\n\n# Looping over a list\nprint(\"\\nLooping over a list:\")\nfruits = [\"apple\", \"banana\", \"cherry\"]\nfor fruit in fruits:\n    print(f\"  I like {fruit}\")\n\n# Loop with enumerate for index\nprint(\"\\nLoop with enumerate:\")\nfor index, fruit in enumerate(fruits):\n    print(f\"  {index}: {fruit}\")",
+    "explanation": "Python's for loop iterates over sequences. range() generates number sequences. break exits the loop, continue skips to the next iteration. enumerate() provides both index and value when looping.",
+    "output": "$ python for-loops.py\nBasic range(1, 4):\n  j = 1\n  j = 2\n  j = 3\n\nLoop with break:\n  loop iteration 0\n  loop iteration 1\n  Breaking at i = 2\n\nLoop with continue (odd numbers only):\n  odd number: 1\n  odd number: 3\n  odd number: 5\n\nLooping over a list:\n  I like apple\n  I like banana\n  I like cherry\n\nLoop with enumerate:\n  0: apple\n  1: banana\n  2: cherry",
     "order": 5
   },
   {
@@ -134,9 +134,9 @@
     "title": "Variadic Functions",
     "slug": "variadic-functions",
     "description": "Variadic functions accept any number of arguments.",
-    "code": "def sum_numbers(*nums):\n    total = 0\n    for num in nums:\n        total += num\n    return total\n\nprint(sum_numbers(1, 2))\nprint(sum_numbers(1, 2, 3, 4))\n\nnums = [1, 2, 3]\nprint(sum_numbers(*nums))",
-    "explanation": "Use *args to accept any number of positional arguments. The * operator unpacks sequences.",
-    "output": "3\n10\n6",
+    "code": "#!/usr/bin/env python3\n# variadic-functions.py\n# Functions that accept variable number of arguments\n\n# Function with *args (variable positional arguments)\ndef sum_numbers(*nums):\n    \"\"\"Sum any number of arguments\"\"\"\n    total = 0\n    print(f\"Received {len(nums)} numbers: {nums}\")\n    for num in nums:\n        total += num\n    return total\n\n# Function with **kwargs (variable keyword arguments)\ndef print_person(**kwargs):\n    \"\"\"Print person details from keyword arguments\"\"\"\n    print(\"Person details:\")\n    for key, value in kwargs.items():\n        print(f\"  {key}: {value}\")\n\n# Function with both *args and **kwargs\ndef flexible_function(*args, **kwargs):\n    \"\"\"Function accepting both types of variable arguments\"\"\"\n    print(f\"Positional args: {args}\")\n    print(f\"Keyword args: {kwargs}\")\n    return len(args) + len(kwargs)\n\n# Testing the functions\nprint(\"=== sum_numbers examples ===\")\nprint(f\"sum_numbers(1, 2) = {sum_numbers(1, 2)}\")\nprint(f\"sum_numbers(1, 2, 3, 4) = {sum_numbers(1, 2, 3, 4)}\")\n\n# Unpacking a list\nnums = [1, 2, 3]\nprint(f\"sum_numbers(*nums) = {sum_numbers(*nums)}\")\n\nprint(\"\\n=== print_person examples ===\")\nprint_person(name=\"Alice\", age=30, city=\"New York\")\n\nprint(\"\\n=== flexible_function examples ===\")\ncount = flexible_function(1, 2, 3, name=\"test\", version=1.0)\nprint(f\"Total arguments: {count}\")",
+    "explanation": "Use *args to accept any number of positional arguments and **kwargs for keyword arguments. The * operator unpacks sequences, and ** unpacks dictionaries. Functions can combine both for maximum flexibility.",
+    "output": "$ python variadic-functions.py\n=== sum_numbers examples ===\nReceived 2 numbers: (1, 2)\nsum_numbers(1, 2) = 3\nReceived 4 numbers: (1, 2, 3, 4)\nsum_numbers(1, 2, 3, 4) = 10\nReceived 3 numbers: (1, 2, 3)\nsum_numbers(*nums) = 6\n\n=== print_person examples ===\nPerson details:\n  name: Alice\n  age: 30\n  city: New York\n\n=== flexible_function examples ===\nPositional args: (1, 2, 3)\nKeyword args: {'name': 'test', 'version': 1.0}\nTotal arguments: 5",
     "order": 14
   },
   {

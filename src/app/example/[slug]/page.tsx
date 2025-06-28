@@ -41,7 +41,6 @@ export default function ExamplePage({ params }: ExamplePageProps) {
     <div className="example-container">
       <PageTitle title={`Python by Example: ${example.title}`} />
       
-      <h1 className="example-title">{example.title}</h1>
       <p className="example-description">{example.description}</p>
       
       <CodeBlock code={example.code} output={example.output} />
