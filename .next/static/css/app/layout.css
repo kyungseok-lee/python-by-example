@@ -1,0 +1,607 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/app/globals.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #1f1f1f;
+  color: #dadada;
+}
+
+em {
+  font-style: italic;
+}
+
+a,
+a:visited {
+  color: #e4e4e4;
+  text-decoration: underline;
+}
+
+.main-container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.main-container .header {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.main-container .header a {
+  text-decoration: none;
+  color: #e4e4e4;
+}
+
+.main-container .footer {
+  font-size: 12px;
+  color: #898e98;
+}
+
+.main-container .footer a,
+.main-container .footer a:visited {
+  color: #898e98;
+}
+
+.main-container .body {
+  padding: 32px 0;
+}
+
+.intro {
+  padding: 0;
+}
+
+.intro p+p {
+  padding: 16px 0 0;
+}
+
+.examples-list {
+  margin: 32px 0 0;
+  list-style: none;
+}
+
+.examples-list li {
+  margin: 0;
+  padding: 0;
+}
+
+.examples-list a {
+  display: block;
+  color: #e4e4e4;
+  text-decoration: underline;
+}
+
+.examples-list a:hover {
+  text-decoration: underline;
+}
+
+.code-block {
+  background-color: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+.code-block .code-header {
+  background-color: #1e293b;
+  padding: 8px 16px;
+  border-bottom: 1px solid #334155;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.code-block .code-header .code-title {
+  font-size: 14px;
+  color: #94a3b8;
+  margin: 0;
+  font-weight: 500;
+}
+
+.code-block .code-header .copy-button {
+  background: #374151;
+  border: 1px solid #4b5563;
+  color: #e5e7eb;
+  padding: 8px 16px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.code-block .code-header .copy-button:hover {
+  background: #4b5563;
+  border-color: #6b7280;
+}
+
+.code-block .code-content {
+  padding: 0;
+  margin: 0;
+  overflow-x: auto;
+}
+
+.code-block .code-content pre {
+  margin: 0;
+  padding: 16px;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  font-family: 'JetBrains Mono', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-x: auto;
+}
+
+.code-block .code-content code {
+  font-family: 'JetBrains Mono', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Example page styles */
+.example-title {
+  font-size: 32px;
+  font-weight: normal;
+  color: #e2e8f0;
+  margin: 0 0 16px 0;
+  font-family: 'Georgia', serif;
+}
+
+.example-description {
+  font-size: 16px;
+  margin: 0 0 24px 0;
+  color: #a3a3a3;
+  line-height: 1.5;
+}
+
+.example-explanation {
+  margin-top: 24px;
+  padding: 16px 0;
+}
+
+.example-explanation p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #d4d4d4;
+  margin: 0;
+}
+
+/* Python syntax highlighting styles */
+.comment {
+  color: #6b7280;
+  /* gray-500 */
+}
+
+.keyword {
+  color: #3b82f6;
+  /* blue-500 */
+  font-weight: 600;
+}
+
+.builtin {
+  color: #8b5cf6;
+  /* violet-500 */
+}
+
+.string {
+  color: #f59e0b;
+  /* amber-500 */
+}
+
+.number {
+  color: #ef4444;
+  /* red-500 */
+}
+
+/* Example page navigation - Go by Example style */
+.example-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid #333;
+  font-size: 14px;
+}
+
+.example-nav-index {
+  color: #999;
+  text-decoration: underline;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.example-nav-index:hover {
+  color: #ccc;
+}
+
+.example-nav-examples {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.example-nav-prev,
+.example-nav-next {
+  color: #999;
+  text-decoration: underline;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.example-nav-prev:hover,
+.example-nav-next:hover {
+  color: #ccc;
+}
+
+.example-nav-separator {
+  color: #555;
+  margin: 0 8px;
+  font-size: 14px;
+}
+
+.keyword {
+  color: #c084fc;
+  font-weight: 500;
+}
+
+.string {
+  color: #34d399;
+}
+
+.comment {
+  color: #6b7280;
+  font-style: italic;
+}
+
+.number {
+  color: #fbbf24;
+}
+
+.function {
+  color: #60a5fa;
+}
+
+.builtin {
+  color: #06b6d4;
+}
+
+.operator {
+  color: #f472b6;
+}
+
+.bracket {
+  color: #fcd34d;
+}
+
+.output-block {
+  background-color: #111827;
+  border: 1px solid #374151;
+  border-radius: 8px;
+  margin: 32px 0 0;
+  padding: 16px;
+  font-family: 'JetBrains Mono', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  color: #34d399;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.explanation {
+  margin: 32px 0 0;
+}
+
+.explanation p+p {
+  margin: 16px 0 0;
+}
+
+/* 코드 액션 버튼들 */
+.code-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.action-button {
+  padding: 6px 12px;
+  background: #333;
+  color: #999;
+  border: 1px solid #555;
+  border-radius: 3px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action-button:hover {
+  background: #444;
+  color: #ccc;
+}
+
+.copy-button.copied {
+  background: #0f5132;
+  color: #d1e7dd;
+}
+
+.run-button:hover {
+  background: #0d6efd;
+  color: white;
+}
+
+/* Go by Example 스타일 레이아웃 */
+.example-content {
+  max-width: 100%;
+}
+
+.example-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #333;
+}
+
+.example-description {
+  margin: 0;
+  color: #999;
+  flex: 1 1;
+  padding-right: 20px;
+}
+
+.example-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.example-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.example-row {
+  display: flex;
+  border-bottom: 1px solid #2a2a2a;
+  min-height: 40px;
+}
+
+.explanation-cell {
+  width: 45%;
+  padding: 15px 20px 15px 0;
+  vertical-align: top;
+  color: #999;
+  font-size: 14px;
+  line-height: 1.6;
+  border-right: 1px solid #333;
+}
+
+.explanation-cell p {
+  margin: 0;
+}
+
+.code-cell {
+  width: 55%;
+  padding: 15px 0 15px 20px;
+  vertical-align: top;
+}
+
+.code-cell pre {
+  margin: 0;
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-family: 'JetBrains Mono', 'Fira Code', Consolas, 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #f8f8f2;
+}
+
+.code-cell code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+.output-cell {
+  width: 55%;
+  padding: 15px 0 15px 20px;
+  vertical-align: top;
+  background-color: #1a1a1a;
+}
+
+.output-content {
+  margin: 0;
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-family: 'JetBrains Mono', 'Fira Code', Consolas, 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #999;
+}
+
+/* 좁은 화면에서의 반응형 처리 */
+@media (max-width: 768px) {
+  .example-row {
+    flex-direction: column;
+  }
+  
+  .explanation-cell,
+  .code-cell,
+  .output-cell {
+    width: 100%;
+    border-right: none;
+    padding: 10px 0;
+  }
+  
+  .explanation-cell {
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+  }
+  
+  .code-cell,
+  .output-cell {
+    padding-top: 10px;
+  }
+}
+
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 32px 0 0;
+  padding: 16px 0;
+  border-top: 1px solid #374151;
+  gap: 16px;
+}
+
+.nav-link {
+  color: #60a5fa;
+  padding: 8px 16px;
+  border: 1px solid #374151;
+  border-radius: 6px;
+  background-color: #1f2937;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  background-color: #374151;
+  border-color: #60a5fa;
+  text-decoration: none;
+  color: #93c5fd;
+}
+
+.nav-link.disabled {
+  color: #6b7280;
+  background-color: #111827;
+  border-color: #374151;
+  cursor: not-allowed;
+}
+
+.nav-link.disabled:hover {
+  background-color: #111827;
+  border-color: #374151;
+  color: #6b7280;
+}

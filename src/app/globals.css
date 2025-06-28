@@ -247,13 +247,32 @@ a:visited {
   line-height: 1.5;
 }
 
-/* Example page title */
+/* Example page styles */
 .example-title {
   font-size: 32px;
   font-weight: normal;
   color: #e2e8f0;
-  margin: 0 0 30px 0;
+  margin: 0 0 16px 0;
   font-family: 'Georgia', serif;
+}
+
+.example-description {
+  font-size: 16px;
+  margin: 0 0 24px 0;
+  color: #a3a3a3;
+  line-height: 1.5;
+}
+
+.example-explanation {
+  margin-top: 24px;
+  padding: 16px 0;
+}
+
+.example-explanation p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #d4d4d4;
+  margin: 0;
 }
 
 /* Python syntax highlighting styles */
