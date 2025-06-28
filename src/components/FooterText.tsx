@@ -24,7 +24,7 @@ export default function FooterText() {
         </Link>
         <span className="separator">|</span>
         <Link
-          href="https://github.com/kyungseok-lee/python-by-example/LICENSE"
+          href="https://github.com/kyungseok-lee/python-by-example/blob/main/LICENSE"
           target="_blank"
           rel="noopener noreferrer"
         >

@@ -256,6 +256,7 @@ a:visited {
   padding: 4px 8px;
   font-size: 10px;
   border-radius: 4px;
+  border: none;
   transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
@@ -277,10 +278,10 @@ a:visited {
 
 .code-actions {
   display: flex;
-  gap: 4px;
+  gap: 8px;
   justify-content: flex-end;
   margin-top: 0;
-  padding: 0 8px 8px 8px;
+  padding: 0 16px 16px 16px;
 }
 
 .example-title {
