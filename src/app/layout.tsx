@@ -26,13 +26,7 @@ export default function RootLayout({
             <div className="body">
               {children}
             </div>
-            <div className="footer">
-                <p>
-                  by Mark McGranaghan and Eli Bendersky | {' '}
-                  <Link href="https://github.com/mmcgrana/gobyexample">source</Link> | {' '}
-                  <Link href="https://creativecommons.org/licenses/by/3.0/">license</Link>
-                </p>
-              </div>
+
             </div>
         </AppProvider>        
       </body>
