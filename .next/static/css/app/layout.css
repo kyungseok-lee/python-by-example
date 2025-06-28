@@ -310,7 +310,8 @@ a:visited {
 
 .example-nav-examples {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 0;
 }
 
 .example-nav-prev,
@@ -324,6 +325,12 @@ a:visited {
 .example-nav-prev:hover,
 .example-nav-next:hover {
   color: #ccc;
+}
+
+.example-nav-separator {
+  color: #555;
+  margin: 0 16px;
+  font-size: 14px;
 }
 
 .keyword {
