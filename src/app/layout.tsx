@@ -9,7 +9,7 @@ import { LanguageProvider } from '@/contexts/LanguageContext'
 
 export const metadata: Metadata = {
   title: 'Python by Example',
-  description: 'Python by Example은 주석이 달린 예제 프로그램을 통해 파이썬을 실습할 수 있는 입문서입니다.',
+  description: 'Python by Example is a hands-on introduction to Python using annotated example programs.',
   icons: {
     icon: '/favicon.ico',
   },
@@ -21,14 +21,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ko">
+    <html lang="en">
       <body>
         <LanguageProvider>
           <AppProvider>
             <div className="main-container">
-              <div className="header-container">
+              <div className="header">
                 <DynamicHeader />
-                <LanguageSelector />
               </div>
               <div className="body">
                 {children}

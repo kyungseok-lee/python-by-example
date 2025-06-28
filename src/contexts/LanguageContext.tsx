@@ -121,7 +121,7 @@ const translations = {
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>('ko')
+  const [language, setLanguage] = useState<Language>('en')
 
   // 브라우저 언어 감지 및 로컬 스토리지에서 불러오기
   useEffect(() => {
@@ -131,14 +131,14 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     } else {
       // 브라우저 언어 감지
       const browserLang = navigator.language.toLowerCase()
-      if (browserLang.startsWith('en')) {
-        setLanguage('en')
+      if (browserLang.startsWith('ko')) {
+        setLanguage('ko')
       } else if (browserLang.startsWith('ja')) {
         setLanguage('ja')
       } else if (browserLang.startsWith('zh')) {
         setLanguage('zh')
       } else {
-        setLanguage('ko') // 기본값
+        setLanguage('en') // 기본값
       }
     }
   }, [])

@@ -546,3 +546,26 @@ a:visited {
   color: #e4e4e4;
   padding: 8px;
 }
+
+/* Footer Content Layout */
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+.footer-content .language-selector {
+  margin-top: 8px;
+}
+
+.footer-content .language-select {
+  font-size: 12px;
+  padding: 6px 10px;
+  background-color: #222;
+  border: 1px solid #444;
+}
