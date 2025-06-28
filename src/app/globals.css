@@ -1,45 +1,119 @@
 /* Go by Example 스타일 CSS - 원본 기반 */
 
 /* CSS reset */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  box-sizing: border-box;
 }
 
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
-body {
-  line-height: 1;
-}
-
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
-/* Layout and typography */
 body {
   font-family: 'Georgia', serif;
   font-size: 16px;
-  line-height: 20px;
+  line-height: 1.5;
   background-color: #1f1f1f;
   color: #dadada;
 }
@@ -48,42 +122,48 @@ em {
   font-style: italic;
 }
 
-h2 {
-  font-size: 48px;
-  line-height: 56px;
-  margin-top: 40px;
-}
-
-h2 a {
-  text-decoration: underline;
-  color: #e4e4e4;
-}
-
-a, a:visited {
+a,
+a:visited {
   color: #e4e4e4;
   text-decoration: underline;
 }
 
-/* 메인 컨테이너 - Go by Example의 intro div 스타일 */
 .main-container {
-  width: 420px;
-  min-width: 420px;
-  max-width: 420px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 120px;
-  padding-top: 40px;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px;
 }
 
-/* 소개 섹션 - Go by Example 원본 스타일 */
-.intro p {
-  padding-top: 20px;
-  line-height: 20px;
+.header {
+  font-size: 32px;
+  line-height: 1;
 }
 
-/* 예제 리스트 - Go by Example 원본 스타일 */
+.header a {
+  text-decoration: none;
+  color: #e4e4e4;
+}
+
+.footer {
+  margin: 32px 0 0;
+  font-size: 12px;
+  color: #898e98;
+}
+
+.footer a,
+.footer a:visited {
+  color: #898e98;
+}
+
+.intro {
+  padding: 32px 0;
+}
+
+.intro p+p {
+  padding: 16px 0 0;
+}
+
 .examples-list {
-  padding-top: 20px;
   list-style: none;
 }
 
@@ -93,36 +173,19 @@ a, a:visited {
 }
 
 .examples-list a {
-  color: #e4e4e4;
-  text-decoration: none;
   display: block;
-  line-height: 20px;
+  color: #e4e4e4;
+  text-decoration: underline;
 }
 
 .examples-list a:hover {
   text-decoration: underline;
 }
 
-/* 예제 페이지 헤더 */
-.example-header {
-  text-align: center;
-  margin-bottom: 40px;
+.examples-main {
+  /* Main examples container styling */
 }
 
-.example-header .main-title {
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-.example-title {
-  font-size: 32px;
-  font-weight: 600;
-  color: #ffffff;
-  margin: 0 0 40px 0;
-  text-align: center;
-}
-
-/* 코드 블록 */
 .code-block {
   background-color: #0f172a;
   border: 1px solid #334155;
@@ -187,17 +250,40 @@ code {
   font-size: 14px;
 }
 
-/* 파이썬 구문 하이라이팅 */
-.keyword { color: #c084fc; font-weight: 500; }
-.string { color: #34d399; }
-.comment { color: #6b7280; font-style: italic; }
-.number { color: #fbbf24; }
-.function { color: #60a5fa; }
-.builtin { color: #06b6d4; }
-.operator { color: #f472b6; }
-.bracket { color: #fcd34d; }
+.keyword {
+  color: #c084fc;
+  font-weight: 500;
+}
 
-/* 출력 결과 */
+.string {
+  color: #34d399;
+}
+
+.comment {
+  color: #6b7280;
+  font-style: italic;
+}
+
+.number {
+  color: #fbbf24;
+}
+
+.function {
+  color: #60a5fa;
+}
+
+.builtin {
+  color: #06b6d4;
+}
+
+.operator {
+  color: #f472b6;
+}
+
+.bracket {
+  color: #fcd34d;
+}
+
 .output-block {
   background-color: #111827;
   border: 1px solid #374151;
@@ -213,7 +299,6 @@ code {
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
 
-/* 설명 섹션 */
 .explanation {
   margin: 40px 0;
   padding: 24px;
@@ -234,7 +319,6 @@ code {
   margin-bottom: 0;
 }
 
-/* 네비게이션 */
 .navigation {
   display: flex;
   justify-content: space-between;
@@ -275,75 +359,3 @@ code {
   border-color: #374151;
   color: #6b7280;
 }
-
-/* 반응형 */
-@media (max-width: 768px) {
-  .main-container {
-    padding: 40px 16px;
-  }
-  
-  .main-title {
-    font-size: 36px;
-    margin-bottom: 40px;
-  }
-  
-  .example-title {
-    font-size: 24px;
-  }
-  
-  .examples-list a {
-    font-size: 16px;
-    padding: 10px 14px;
-  }
-  
-  .intro {
-    font-size: 16px;
-  }
-  
-  .navigation {
-    flex-direction: column;
-    gap: 12px;
-  }
-  
-  .nav-link {
-    text-align: center;
-    width: 100%;
-  }
-  
-  .code-header {
-    padding: 10px 16px;
-  }
-  
-  pre {
-    padding: 16px;
-    font-size: 13px;
-  }
-}
-
-/* 모바일 반응형 */
-@media (max-width: 768px) {
-  .main-container {
-    width: auto;
-    min-width: auto;
-    max-width: none;
-    margin: 0 20px;
-    padding-top: 20px;
-    margin-bottom: 60px;
-  }
-  
-  h2 {
-    font-size: 28px;
-    line-height: 32px;
-  }
-}
-
-/* 푸터 - Go by Example 원본 스타일 */
-.footer {
-  font-size: 75%;
-  color: #898e98;
-}
-
-.footer a, .footer a:visited {
-  color: #898e98;
-}
-

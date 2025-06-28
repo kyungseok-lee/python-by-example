@@ -20,15 +20,11 @@ export default function ExamplePage({ params }: ExamplePageProps) {
 
   return (
     <div className="main-container">
-      <div className="example-header">
+      <div className="header">
         <h1 className="main-title">
-          <Link href="/">Python by Example</Link>
+          <Link href="/">Python by Example</Link>: {example.title}
         </h1>
       </div>
-      
-      <h2 className="example-title">
-        {example.title}
-      </h2>
 
       <CodeBlock
         code={example.code}
@@ -70,7 +66,8 @@ export default function ExamplePage({ params }: ExamplePageProps) {
 
       <div className="footer">
         <p>
-          <Link href="https://gobyexample.com/">Go by Example</Link>에서 영감을 받아 제작되었습니다.
+          <Link href="https://gobyexample.com/">Go by Example</Link>에서 영감을
+          받아 제작되었습니다.
         </p>
       </div>
     </div>
