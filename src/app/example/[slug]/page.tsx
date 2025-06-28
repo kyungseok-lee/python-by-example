@@ -19,13 +19,7 @@ export default function ExamplePage({ params }: ExamplePageProps) {
   const navigation = getNavigationForExample(params.slug)
 
   return (
-    <div className="main-container">
-      <div className="header">
-        <h1 className="main-title">
-          <Link href="/">Python by Example</Link>: {example.title}
-        </h1>
-      </div>
-
+    <div className="example-container">
       <CodeBlock
         code={example.code}
         output={example.output}
@@ -36,39 +30,26 @@ export default function ExamplePage({ params }: ExamplePageProps) {
         <p>{example.explanation}</p>
       </div>
 
-      <div className="navigation">
-        <div>
-          {navigation.prev ? (
-            <Link href={`/example/${navigation.prev.slug}`} className="nav-link">
-              ← {navigation.prev.title}
-            </Link>
-          ) : (
-            <span className="nav-link disabled">← 이전</span>
-          )}
-        </div>
-        
-        <div>
-          <Link href="/" className="nav-link">
-            목록
+      <div className="example-nav">
+        {navigation.prev ? (
+          <Link href={`/example/${navigation.prev.slug}`} className="example-nav-prev">
+            ← {navigation.prev.title}
           </Link>
-        </div>
+        ) : (
+          <div className="example-nav-prev-placeholder"></div>
+        )}
         
-        <div>
-          {navigation.next ? (
-            <Link href={`/example/${navigation.next.slug}`} className="nav-link">
-              {navigation.next.title} →
-            </Link>
-          ) : (
-            <span className="nav-link disabled">다음 →</span>
-          )}
-        </div>
-      </div>
-
-      <div className="footer">
-        <p>
-          <Link href="https://gobyexample.com/">Go by Example</Link>에서 영감을
-          받아 제작되었습니다.
-        </p>
+        <Link href="/" className="example-nav-index">
+          인덱스
+        </Link>
+        
+        {navigation.next ? (
+          <Link href={`/example/${navigation.next.slug}`} className="example-nav-next">
+            {navigation.next.title} →
+          </Link>
+        ) : (
+          <div className="example-nav-next-placeholder"></div>
+        )}
       </div>
     </div>
   )

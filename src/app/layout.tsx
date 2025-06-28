@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from 'next'
 import './globals.css'
 
@@ -17,7 +18,22 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        {children}
+        <div className="main-container">
+          <div className="header">
+            <h1 className="main-title">
+              <Link href="/">Python by Example</Link>
+            </h1>
+          </div>
+          <div className="body">
+            {children}
+          </div>
+          <div className="footer">
+              <p>
+                <Link href="https://gobyexample.com/">Go by Example</Link>에서 영감을
+                받아 제작되었습니다.
+              </p>
+            </div>
+          </div>        
       </body>
     </html>
   )
