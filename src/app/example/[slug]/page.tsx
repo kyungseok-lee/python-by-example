@@ -19,61 +19,54 @@ export default function ExamplePage({ params }: ExamplePageProps) {
   const navigation = getNavigationForExample(params.slug)
 
   return (
-    <>
-      <div className="header">
-        <h1>
+    <div className="main-container">
+      <div className="example-header">
+        <h1 className="main-title">
           <Link href="/">Python by Example</Link>
         </h1>
       </div>
       
-      <div className="container">
-        <h2 style={{ 
-          fontSize: '24px', 
-          fontWeight: 'normal', 
-          marginBottom: '30px',
-          color: '#f2f2f2'
-        }}>
-          {example.title}
-        </h2>
+      <h2 className="example-title">
+        {example.title}
+      </h2>
 
-        <CodeBlock
-          code={example.code}
-          output={example.output}
-          title={example.title}
-        />
+      <CodeBlock
+        code={example.code}
+        output={example.output}
+        title={example.title}
+      />
 
-        <div className="explanation">
-          <p>{example.explanation}</p>
-        </div>
+      <div className="explanation">
+        <p>{example.explanation}</p>
+      </div>
 
-        <div className="navigation">
-          <div>
-            {navigation.prev ? (
-              <Link href={`/example/${navigation.prev.slug}`} className="nav-link">
-                ← {navigation.prev.title}
-              </Link>
-            ) : (
-              <span className="nav-link disabled">← 이전</span>
-            )}
-          </div>
-          
-          <div>
-            <Link href="/" className="nav-link">
-              목록
+      <div className="navigation">
+        <div>
+          {navigation.prev ? (
+            <Link href={`/example/${navigation.prev.slug}`} className="nav-link">
+              ← {navigation.prev.title}
             </Link>
-          </div>
-          
-          <div>
-            {navigation.next ? (
-              <Link href={`/example/${navigation.next.slug}`} className="nav-link">
-                {navigation.next.title} →
-              </Link>
-            ) : (
-              <span className="nav-link disabled">다음 →</span>
-            )}
-          </div>
+          ) : (
+            <span className="nav-link disabled">← 이전</span>
+          )}
+        </div>
+        
+        <div>
+          <Link href="/" className="nav-link">
+            목록
+          </Link>
+        </div>
+        
+        <div>
+          {navigation.next ? (
+            <Link href={`/example/${navigation.next.slug}`} className="nav-link">
+              {navigation.next.title} →
+            </Link>
+          ) : (
+            <span className="nav-link disabled">다음 →</span>
+          )}
         </div>
       </div>
-    </>
+    </div>
   )
 }
