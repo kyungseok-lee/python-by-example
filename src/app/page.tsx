@@ -16,7 +16,7 @@ export default function HomePage() {
             Python by Example
           </h1>
           <p className="text-lg text-gray-600">
-            실제 예제로 배우는 파이썬 프로그래밍 • {totalExamples}개의 예제
+            {totalExamples}개의 예제
           </p>
         </div>
       </header>
@@ -26,12 +26,11 @@ export default function HomePage() {
         {/* 소개 섹션 */}
         <div className="mb-12 text-center">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-            파이썬의 기초부터 고급까지
+            파이썬 기초 학습
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Go by Example에서 영감을 받은 파이썬 학습 사이트입니다. 
-            각 예제는 실행 가능한 코드와 상세한 설명으로 구성되어 있어 
-            파이썬을 체계적으로 학습할 수 있습니다.
+            각 예제는 실행 가능한 코드와 상세한 설명으로 구성되어 있습니다.
           </p>
         </div>
 
