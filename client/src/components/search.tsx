@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useState, useEffect, useMemo } from "react";
 import { Input } from "@/components/ui/input";
 import { Search as SearchIcon } from "lucide-react";
 import { Link } from "wouter";
-import type { Example } from "@shared/schema";
+import { searchExamples, type Example } from "@/lib/data-loader";
 
 interface SearchProps {
   onClose?: () => void;
@@ -14,15 +13,12 @@ export default function Search({ onClose, className }: SearchProps) {
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
-  const { data: searchResults, isLoading } = useQuery({
-    queryKey: ["/api/search", query],
-    enabled: query.length > 0,
-    queryFn: async () => {
-      const response = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
-      if (!response.ok) throw new Error("Search failed");
-      return response.json() as Promise<Example[]>;
-    },
-  });
+  const searchResults = useMemo(() => {
+    if (query.length === 0) return [];
+    return searchExamples(query);
+  }, [query]);
+
+  const isLoading = false; // No loading since we're using local data
 
   useEffect(() => {
     setIsOpen(query.length > 0);

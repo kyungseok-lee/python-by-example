@@ -1,40 +1,18 @@
-import { useQuery } from "@tanstack/react-query";
 import { useRoute, Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import CodeBlock from "@/components/code-block";
 import Navigation from "@/components/navigation";
-import type { Example } from "@shared/schema";
+import { getExampleBySlug, type Example } from "@/lib/data-loader";
 
 export default function ExamplePage() {
   const [match, params] = useRoute("/:slug");
   const slug = params?.slug;
-
-  const { data: example, isLoading, error } = useQuery({
-    queryKey: ["/api/examples", slug],
-    enabled: !!slug,
-    queryFn: async () => {
-      const response = await fetch(`/api/examples/${slug}`);
-      if (!response.ok) {
-        if (response.status === 404) {
-          throw new Error("Example not found");
-        }
-        throw new Error("Failed to fetch example");
-      }
-      return response.json() as Promise<Example>;
-    },
-  });
+  
+  const example = slug ? getExampleBySlug(slug) : undefined;
 
   if (!match) return null;
 
-  if (isLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="loading-spinner w-8 h-8"></div>
-      </div>
-    );
-  }
-
-  if (error || !example) {
+  if (!example) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <Card className="w-full max-w-md">

@@ -1,30 +1,12 @@
-import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { getCategoryColorClass } from "@/lib/examples-data";
 import Search from "@/components/search";
-import type { Category, Example } from "@shared/schema";
+import { getCategories, getExamples, getExamplesByCategory, type Category, type Example } from "@/lib/data-loader";
 
 export default function Homepage() {
-  const { data: categories, isLoading: categoriesLoading } = useQuery({
-    queryKey: ["/api/categories"],
-  });
-
-  const { data: examples, isLoading: examplesLoading } = useQuery({
-    queryKey: ["/api/examples"],
-  });
-
-  if (categoriesLoading || examplesLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="loading-spinner w-8 h-8"></div>
-      </div>
-    );
-  }
-
-  const getExamplesByCategory = (categoryId: number) => {
-    return examples?.filter((example: Example) => example.categoryId === categoryId) || [];
-  };
+  const categories = getCategories();
+  const examples = getExamples();
 
   return (
     <div className="space-y-12">
@@ -48,7 +30,7 @@ export default function Homepage() {
 
       {/* Categories */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {categories?.map((category: Category) => {
+        {categories.map((category: Category) => {
           const categoryExamples = getExamplesByCategory(category.id);
           
           return (
